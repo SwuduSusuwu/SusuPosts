@@ -1,8 +1,10 @@
 (C) 2024 Swudu Susuwu, dual licenses: choose [_GPLv2_](./LICENSE_GPLv2) or [_Creative Commons Attribution 2_](./LICENSE) (allows all uses).
 
 # Table of Contents
+- [Purposes](#purposes)
 - [How to use this](#how-to-use-this)
   - [Download](#download)
+  - [Signature/certificate](#signaturecertificate)
 - [How to contribute](#how-to-contribute)
   - [Beta test/experimental branch](#beta-testexperimental-branch)
   - [Good first issues to contribute to](https://github.com/SwuduSusuwu/SusuPosts/contribute)
@@ -13,12 +15,21 @@
     - [Escrow](#escrow)
     - [Affiliates](#affiliates)
 
+# Purposes
+[`./.ssh/`](./.ssh/) is to [use signatures / certificates](#signaturecertificate).
+
 # How to use this
 This repo is new. So that fixes do not require use of `git push --force` on the [`trunk`](https://github.com/SwuduSusuwu/SusuPosts/tree/trunk/) branch (or tons of trivial fixes which bloat `git log`), new posts go to the [`preview`](https://github.com/SwuduSusuwu/SusuPosts/tree/preview/) branch for review (which can last months).
 - For now, just the `preview` branch has posts.
 ## Download
 Download with `git clone https://github.com/SwuduSusuwu/SusuPosts.git` and browse local with `cd mid/ && ls`.
 - To opt-in to the beta (the preview), use `git switch preview` (opt-out with `get switch trunk`).
+## Signature/certificate
+[`./.ssh/setup.sh`](./setup.sh) is to setup `gpg.ssh.allowedSignersFile` (allows to use `git verify <ref>` or `git log --show-signature`).
+- `git verify <ref>` or `git log —show-signatures` shall match [`./.ssh/sha256.sig`](./.ssh/sha256.sig) for [new commits](https://github.com/SwuduSusuwu/SusuLib/commit/3efe601f15ae0fdfd05cfbc1a75a0e6a4a08124b)
+- You can compare those certificates to [our blog post](https://swudususuwu.substack.com/p/githubcomswudususuwusubstack-certificate-new).)
+
+\[Notice: This [public crypto](https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally) "signature", is not related to "signature analysis" ([Substr scans](https://github.com/SwuduSusuwu/SusuLib/README.md#purposes)).\]
 
 # How to contribute
 View [documented issues](https://github.com/SwuduSusuwu/SusuPosts/issues/) (for ideas on how to contribute, plus so you do not report documented issues.)
@@ -79,6 +90,7 @@ Do atomic commits: if swapping the new commit with a previous commit (such as th
 ## Sponsor
 To sponsor this (which allows us to produce more source codes), you can use crypto (such as [**Bitcoin**](https://wikipedia.org/wiki/Bitcoin)) to [produce a one-time-use address](https://poe.com/s/IPhIMyuMY6SnYM0yqEJl) (which you deposit funds into), and send the address&private-key to [a contact which `./SECURITY.md` lists](./SECURITY.md#sensitive-issues).
 - Rather than us publish a send-to address (for a particular protocol), this allows us to accept all forms of crypto.
+- If amount is more than $100 and you don't trust the contact platforms, use [`./.ssh/id_ed25519.pub`](./.ssh/id_ed25519.pub) to [secure those](https://superuser.com/questions/576506/how-to-use-ssh-rsa-public-key-to-encrypt-a-text/1850928#1850928).
 ### Escrow
 If you want proof that your crypto/cash will go to produce specific systems, use [**escrow** services](https://wikipedia.org/wiki/Escrow) (what you send the **escrow** is: crypto/cash, plus contract which references an [open issue which you choose](https://github.com/SwuduSusuwu/SusuPosts/issues/)).
 - If none of those issues match what you want, you can [post your own issue](https://github.com/SwuduSusuwu/SusuPosts/issues/new) for this.
