@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# This is [custom `pre-commit`](https://github.com/SwuduSusuwu/SusuPosts/blob/preview/hooks/pre-commit):
+# Calls [sample `pre-commit` (which scans for non-ASCII filenames, conflict markers or whitespace errors)](../.git/hooks/pre-commit.sample)
+GIT_ROOT="$(dirname $(git rev-parse --git-dir))/" # `git` does not set `${GIT_DIR}`, nor `${GIT_WORK_TREE}`
+
+git config core.whitespace -blank-at-eof # Prevents "new blank line at EOF."
+. "$0.sample" # "An example hook script to verify what is about to be committed."
+
