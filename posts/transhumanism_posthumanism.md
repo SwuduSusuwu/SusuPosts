@@ -13,6 +13,7 @@ Numerous tools have possible uses to transplant human neural tissue into compute
 # Table of Contents
 - [Discussion](#discussion)
 - [Synopsis](#synopsis)
+  - [How to do now](#how-to-do-now) *Notice*: is theoretical (unsupported)
 
 ******************************************
 # Discussion
@@ -89,4 +90,11 @@ you can undo death if you upload thus human’s consciousness.
 * <https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md> discusses computer architectures which mimic human nervous systems.
   * <https://github.com/SwuduSusuwu/SusuJava/blob/preview/posts/ConcernsOfExistenceMonism.md> discusses possible computer consciousness.
 * <https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/SimdGpgpuTpu.md> discusses how to use computers with thousands (or billions) of units of execution (similar to human neural tissue).
+
+## How to do now
+[This discussion with *Google Assistant*](https://www.google.com/search?q=google+assistant&sca_esv=545bdda786e188f2&sxsrf=ANbL-n5YXsIyUzqo1EdicvLfHEQMkWLZqg%3A1770757234001&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX-iVZ7JibxEA2X7M_ninQtyPvLjOMD8rEbvmEXFkpf-BZ9Ye0DvaGo2VIh3rPCRxJoXCJuG2mDp2slVzQil8Pq299r8bUb63i5MXxBt3HcdqBromIPGCwOZqEkEaLhj9i5xcWdPME1dvXtbKlIy8q3s40vbZqdTM91o2uTM8sp1eUk86fQ&aep=1&ntc=1&sa=X&ved=2ahUKEwit3Knf6M-SAxVOZvUHHbsaFfkQ2J8OegQIGRAE&biw=1021&bih=378&dpr=2.22&mstk=AUtExfD4WcmYfYdBH02hrTnqhuumnZYCbaGyLTuxhgg-CJ3GSQxfNqDs_mI7eXGPXZHkjQFiAACIhGiQx5fE8odieCBOXUIb7G_ZyODEcIsSaeleh1RqRGeo96-SUZ-9st3Nqauzq7mSxTcWmMN0gx4U1k3NPZkQPaPJhyo2eR3chfXDbxYMQtyOHCheWPemcL28jNwWqpqLFT1rZsaK0TFW27BFFg7-7NkYMGZtn5LjvmdLcM5-IZf2xN8ipfMq6mQPa1EW0B7zyfwKx3RBAOl5P7zOqtcz8-ouk6Y&csuir=1) explores how to attach Bluetooth meshes to your thalamus with $6000 of tools (for control of exoskeletons, or for immersion into virtual worlds). This does not include olfaction, but is the most affordable approach for almost-total fusion to computers.
+
+*Notice*: is theoretical (unsupported). Requires use of surgical saws (which are fatal if errors occur): do not do this without physician supervision (plus approval).
+
+[Continues](https://github.com/SwuduSusuwu/SusuPosts/discussions/2)
 
