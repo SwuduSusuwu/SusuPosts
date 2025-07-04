@@ -13,5 +13,6 @@
 - [`./posts/Brain-computer-interfaces_Neural-interfaces.md`](./Brain-computer-interfaces_Neural-interfaces.md)
 - [`./posts/Global_warming,_what_to_do.md`](./Global_warming,_what_to_do.md)
 - [`./posts/joules-to-fuse-into-gold.md`](./joules-to-fuse-into-gold.md)
+- [`./posts/transhumanism_posthumanism.md`](./transhumanism_posthumanism.md)
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
