@@ -131,5 +131,9 @@ Notice: the *block quote* which follows was produced from the [*artificial intel
 > For now, the "romance" advantage remains a promising *theoretical* benefit of biological regrowth rather than a proven reality.
 >
 > *(Disclaimer: This analysis is speculative and based on the document’s hypothetical framework. Actual feasibility requires rigorous scientific validation.)*
+
 ******************************************
-[This discussion with *Solar-Pro-2*](https://poe.com/s/2suGQSk0awT4qGTPtRx3) explores numerous radical speculative hypotheses around the role of *gender dynamics*, plus possible results for those who transform. **Notice**: the discussion is provocative, with triggers which could upset those who are sensitive to *gender dynamics*, thus the contents are not included in this forum.
+
+- <https://copilot.microsoft.com/shares/eQ6BGaYW6uU8wnEi6k9f2> discusses this with *Microsoft Copilot*.
+- [This discussion with *Solar-Pro-2*](https://poe.com/s/2suGQSk0awT4qGTPtRx3) explores numerous radical speculative hypotheses around the role of *gender dynamics*, plus possible results for those who transform. **Notice**: the discussion is provocative, with triggers which could upset those who are sensitive to *gender dynamics*, thus the contents are not included in this forum.
+
