@@ -97,7 +97,7 @@ The sort of **SW** (programs) which improve the most through use of `MapReduce` 
 - [`./posts/ArduinoElegooTools.md`](./ArduinoElegooTools.md)
 - [`./posts/VirusAnalysis.md`](./VirusAnalysis.md)
 - [`./posts/CnsCompress.md`](./CnsCompress.md)
-- [How to produce general-use autonomous tools through calculus (continuous formulas), + use _TensorFlow_ for synthesis of close-to-human consciousness.](https://swudususuwu.substack.com/p/program-general-purpose-robots-autonomous)
+- [How to produce general-use autonomous tools through calculus (continuous formulas), + use _TensorFlow_ for synthesis of close-to-human consciousness.](./Autonomous-tools_+_human-consciousness.md)
 - [`./posts/AlbatrossCNS.md`](./AlbatrossCNS.md)
 - [Destructive (scan uses nanoscopic decomposition) upload of human's consciousness](https://swudususuwu.substack.com/p/destructive-unreversible-upload-of)
 
