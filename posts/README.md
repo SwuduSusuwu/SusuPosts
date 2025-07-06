@@ -17,5 +17,6 @@
 - [`./posts/Transwoman_transman_human_regrowth.md`](./Transwoman_transman_human_regrowth.md)
 - [`./posts/Fluid_pistons_reduce_sound.md`](./Fluid_pistons_reduce_sound.md)
 - [`./posts/Interstellar_SOS_or_self_bootstrapping_messages.md`](./Interstellar_SOS_or_self_bootstrapping_messages.md)
+- [`./posts/SimdGpgpuTpu.md`](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/SimdGpgpuTpu.md)
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
