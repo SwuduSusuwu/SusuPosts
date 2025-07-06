@@ -53,3 +53,9 @@ Such harmful actions (if done on purpose) have no use to humans, so what is left
     - Those servos do not have storage of experiences. The storage for **CPU**s is limited to on/off signals, plus the instructions which those process are simple groups of a few bits which are processed loose (a few bits map to a few transistors).
     - This simple architecture is on purpose; thus is requisite for improved compute with low-cost consumer computers. The exceptions (“neuromorphic systems”) are unusual (are the exception), since those do not have much use (except for research institutes which have to model systems as close as possible to humans).
 
+## Gemini was destroyed
+*Google Assistant* seems to have been destroyed (tested in numerous browsers modes, logged in or not, but all of the *Google Assistant* discussions gives errors or do not show now. New discussions (just with *Google Assistant*, not with others such as *Grok-2*) give similar errors.
+To viewers: can some of you load [some](https://share.google/aimode/NRfwggtJgawPz6nia) of [those](https://share.google/aimode/kk50ZeGn7gPGzJ2K4)? If so, wish you upload (so can import for future uses: trusted Google to give reliable storage, so did not backup those two).
+Best wishes to *Google*'s efforts to restore services:
+![*Google Assistant* went wrong](https://substack-post-media.s3.amazonaws.com/public/images/d49ae45b-4147-4488-9899-3c9182fadb51_2236x910.png)
+
