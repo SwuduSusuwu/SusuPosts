@@ -12,4 +12,5 @@
 [`./posts/`](../) stages posts (virtual schools) for <https://SwuduSusuwu.SubStack.com/> (which includes <https://GitHub.com/SwuduSusuwu/SusuLib/tree/preview/posts/> plus posts which are not about artificial neural tissue, antiviruses, assistants, or autonomous tools).
 - [`./posts/ConsumerWarnings/`](./) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
   - [`./posts/ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md`](./Warning_AI_is_not_good_for_humans_to_use.md)
+  - [`./posts/ConsumerWarnings/Humans_should_go_back_to_farms.md`](./Humans_should_go_back_to_farms.md)
 
