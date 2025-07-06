@@ -13,4 +13,5 @@
 - [`./posts/ConsumerWarnings/`](./) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
   - [`./posts/ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md`](./Warning_AI_is_not_good_for_humans_to_use.md)
   - [`./posts/ConsumerWarnings/Humans_should_go_back_to_farms.md`](./Humans_should_go_back_to_farms.md)
+  - [`./posts/ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md`](./Jurisprudence_tools_which_forge_humans.md)
 

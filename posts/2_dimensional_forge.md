@@ -5,7 +5,7 @@
 - The questions ("**Q**"s) are human-produced, but choose to release those for all uses (with attribution or with no attribution).
 - This post just shows what was possible back in 2000. For more modern, advanced synthesis browse to [the version for *Vulkan* / *TensorFlow*](./HowtoForgeNaturalHumanShadows.md).
 
-The source code (which follows) was published to warn others how simple this was to do, not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use the source code (with images which you own) to produce cartoons.
+The source code (which follows) was published to [warn others how simple this was to do](./ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md#goals--purposes-of-this), not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use the source code (with images which you own) to produce cartoons.
 
 # Table of Contents
 - [Discussion with *Solar-Pro-2*](#discussion-with-solar-pro-2)

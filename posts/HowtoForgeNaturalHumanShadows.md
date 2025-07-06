@@ -4,7 +4,7 @@ Fair-use attribution: [cover photo is *Apple*’s new “*Final Cut Pro*” digi
 
 \[This post allows [all uses (is released through *Creative Commons Generic Attributions 2*)](https://creativecommons.org/licenses/by/2.0/), if used with your own images.\]
 
-The architecture (which follows) was published to warn others how simple it is to forge motion images, not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use this architecture (plus the listed tools) with your own images.
+The architecture (which follows) was published [to warn others how simple it is to forge motion images](./ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md#goals--purposes-of-this), not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use this architecture (plus the listed tools) with your own images.
 
 # Table of Contents
 - [Intro](#intro)
