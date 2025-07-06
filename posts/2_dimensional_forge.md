@@ -1,8 +1,9 @@
 *How simple the job was to use computers to forge evidence back in the year 2000*
 
 \[This post allows [all uses](https://creativecommons.org/licenses/by/2.0/). Most new version of this post: [*GitHub* `preview` branch](https://github.com/SwuduSusuwu/SusuPosts/blob/preview/posts/2_dimensional_forge.md).\]
-- Since this source code is computer-produced, if you do not wish to follow *Creative Commons Generic 2*, you do not have to give attribution (except if you republish this onto platforms which require you to include attribution notices).
-* The questions ("**Q**"s) are human-produced, but choose to release those for all uses (with attribution or with no attribution).
+- Since this source code is computer-produced, if you do not wish to follow *Creative Commons Generic 2*.
+- The questions ("**Q**"s) are human-produced, but choose to release those for all uses (with attribution or with no attribution).
+- This post just shows what was possible back in 2000. For more modern, advanced synthesis browse to [the version for *Vulkan* / *TensorFlow*](./HowtoForgeNaturalHumanShadows.md).
 
 The source code (which follows) was published to warn others how simple this was to do, not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use the source code (with images which you own) to produce cartoons.
 
