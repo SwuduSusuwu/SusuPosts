@@ -21,6 +21,7 @@
 - [`./posts/SakuraSchoolHowto.md`](./SakuraSchoolHowto.md)
 - [`./posts/Autonomous-tools_+_human-consciousness.md`](./Autonomous-tools_+_human-consciousness.md)
 - [`./posts/How_to_ensure_webservers_follow_standards_manuals.md`](./How_to_ensure_webservers_follow_standards_manuals.md)
+- [`./posts/2_dimensional_forge.md`](./2_dimensional_forge.md)
 - [`./posts/ConsumerWarnings/`](./ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
