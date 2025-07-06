@@ -15,4 +15,5 @@
   - [`./posts/ConsumerWarnings/Humans_should_go_back_to_farms.md`](./Humans_should_go_back_to_farms.md)
   - [`./posts/ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md`](./Jurisprudence_tools_which_forge_humans.md)
   - [`./posts/ConsumerWarnings/*****_&_*****_deserve_distrust_do_not_purchase_from_them.md`](./China_&_Japan_deserve_distrust_do_not_purchase_from_them.md)
+  - [`./posts/ConsumerWarnings/*****s_deserve_distrust.md`](./Sheriffs_deserve_distrust.md)
 
