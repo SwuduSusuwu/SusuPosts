@@ -20,5 +20,6 @@
 - [`./posts/SimdGpgpuTpu.md`](./SimdGpgpuTpu.md)
 - [`./posts/SakuraSchoolHowto.md`](./SakuraSchoolHowto.md)
 - [`./posts/Human_ancestors_are_fish.md`](./Human_ancestors_are_fish.md)
+- [`./posts/Warning_AI_is_not_good_for_humans_to_use.md`](./Warning_AI_is_not_good_for_humans_to_use.md)
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
