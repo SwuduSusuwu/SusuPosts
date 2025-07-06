@@ -30,6 +30,7 @@
 - [`./posts/joules-to-fuse-into-gold.md`](./posts/joules-to-fuse-into-gold.md)
 - [`./posts/transhumanism_posthumanism.md`](./posts/transhumanism_posthumanism.md)
 - [`./posts/Transwoman_transman_human_regrowth.md`](./posts/Transwoman_transman_human_regrowth.md)
+- [`./posts/Fluid_pistons_reduce_sound.md`](./posts/Fluid_pistons_reduce_sound.md)
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
 [`./hooks/`](./hooks/) is `git` scripts ([`man githooks`](https://git-scm.com/docs/githooks)) which assist you; install with `cp -ra ./hooks/* ./.git/hooks/`.
