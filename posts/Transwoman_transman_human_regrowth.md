@@ -8,6 +8,7 @@ Produce retroviruses to ungrow phallus / vulva, plus grow vulva / phallus?
 # Table of Contents
 - [Discussion](#discussion)
 - [Synopsis](#synopsis)
+  - [Future](#future)
 
 ******************************************
 # Discussion
@@ -58,4 +59,18 @@ Since numerous tools allow to reprogram genetic code of humans, future posts wil
 ******************************************
 # Synopsis
 - [`./posts/transhumanism_posthumanism.md`](./transhumanism_posthumanism.md) discusses the human *peripheral nervous system* (knowledge of thus is essential to ungrow / regrow human organs).
+
+## Future
+Have no practical experience as chemist (nor as biologist); this document is just a portmantau of relevent documents found. Purpose: graduate chemists/biologists finish this, which will allow natural (versus surgical) transition for transhumans. Expected problems: humans have massive immune systems (the distributed human immune system is around 2kilograms), so any sort of retrovirus which replaces organs would require:
+* extraction of genetic code (from the individual who will transition), which is required to produce immune-compatible chromosomes.
+* production of custom retroviruses ([host-specific, compatible with thus individual's immune system](https://www.google.com/search?q=Host-specific%20theurapeutic%20retroviruses)).
+* [immunosuppression (so that the injected retroviruses are not rejected)](https://www.google.com/search?q=Medical%20retrovirus%20rejection%3A%20solution%20is%20immunosuppressants)
+  * you can produce retroviruses which grow organs whose chromosomes are compatible with the host immune system, but guess is:
+    * that all molecules which start to undo grown organs (or to grow new organs) in grown individuals will trigger responses from human immune systems (regardless of whether or not the new organs are compatible with the immune system)
+    * since once all organs are grown, there is no reason for humans to ungrow grown organs, nor to grow new organs, you can assume (due to death-avoidance from evolution) that such actions will cause responses from the immune system.
+* isolation until thus retroviruses grow the desired organs (so that infection does not result from immunosuppression). If the chromosomes are compatible, the immunosuppression can stop as soon as the new organs are grown.
+
+To transform thus on own would require access to expensive lab tools, such as those at research institutes. Can afford to travel, but can not afford those tools. Do you know of research institutes which do not require that you are a graduate chemist/biologist to use tools such as [electron microscopes](https://www.labx.com/categories-a/electron-microscope) (which cost around a million dollars, to view cellular subcomponents), [electrophoresis](https://www.coleparmer.com/c/electrophoresis-systems) (affordable on own, but requires lab conditions, plus chemical reagents, to use) plus [DNA printers](https://telesisbio.com/products/bioxp-system/bioxp-3250-system/) (plus [expensive oligonucleotide precursors](https://www.synthesis.cc/synthesis/2025/5/dna-synthesis-and-sequencing-costs-and-productivity-for-2025), plus tools to [merge DNA fragments](https://bitesizebio.com/67124/multiple-fragment-ligation/) if the DNA printers cannot print huge contiguous chromosomes)? If not, if you wish this to improve, wish you forward this to graduate students with access to such tools.
+
+If performed with caution, this transition has no expected "side-effects" versus surgical transition, plus is not as invasive as surgical transition ([surgical transition requires numerous hour-long-sessions under surgical tools to perform](https://www.google.com/search?q=How+much+time+do+you+have+to+spend+surgical+tools+to+your+vulva+transformed+into+a+phallus%2C+or+phallus+transformed+into+a+vulva)); the total involvement of the individual who will transform is just to give genetic material, use immunosuppressants, plus inject the retrovirus which will transform you from a woman to a man (or from a man to a woman), plus isolation while on immunosuppressants.
 
