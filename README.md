@@ -36,7 +36,7 @@ Download with `git clone https://github.com/SwuduSusuwu/SusuPosts.git` and brows
 - `git verify <ref>` or `git log —show-signatures` shall match [`./.ssh/sha256.sig`](./.ssh/sha256.sig) for [new commits](https://github.com/SwuduSusuwu/SusuLib/commit/3efe601f15ae0fdfd05cfbc1a75a0e6a4a08124b)
 - You can compare those certificates to [our blog post](https://swudususuwu.substack.com/p/githubcomswudususuwusubstack-certificate-new).)
 
-\[Notice: This [public crypto](https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally) "signature", is not related to "signature analysis" ([Substr scans](https://github.com/SwuduSusuwu/SusuLib/README.md#purposes)).\]
+\[Notice: This [public crypto](https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally) "signature", is not related to "signature analysis" ([Substr scans](https://github.com/SwuduSusuwu/blob/preview/SusuLib/README.md#purposes)).\]
 
 # How to contribute
 View [documented issues](https://github.com/SwuduSusuwu/SusuPosts/issues/) (for ideas on how to contribute, plus so you do not report documented issues.)
