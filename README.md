@@ -6,7 +6,7 @@
   - [Download](#download)
   - [Signature/certificate](#signaturecertificate)
 - [How to contribute](#how-to-contribute)
-  - [Beta test/experimental branch](#beta-testexperimental-branch)
+  - [Beta test (preview branch)](#beta-test-preview-branch)
   - [Good first issues to contribute to](https://github.com/SwuduSusuwu/SusuPosts/contribute)
   - [Contributor conventions/rules](#contributor-conventionsrules)
     - [_Markdown_](#markdown)
@@ -40,10 +40,10 @@ Download with `git clone https://github.com/SwuduSusuwu/SusuPosts.git` and brows
 
 # How to contribute
 View [documented issues](https://github.com/SwuduSusuwu/SusuPosts/issues/) (for ideas on how to contribute, plus so you do not report documented issues.)
-## Beta test/`experimental` branch
-- `git switch experimental`
+## Beta test (`preview` branch)
+- Use `git switch preview`
   - Preview samples / scripts symptoms of new issues (hint: listen to samples for glitches, or look through script outputs for "Warning:"s or "Error:"s).
-  - If you found new issue(s) (which aren't due to misconfigurations in your system), [post new issue(s)](https://github.com/SwuduSusuwu/SusuPosts/issues/new).
+  - If you found new issue(s) (which aren't due to misconfigurations in your system), [comment on the pull request](https://github.com/SwuduSusuwu/SusuPosts/pull/1) or [post new issue(s)](https://github.com/SwuduSusuwu/SusuPosts/issues/new).
     - Notice: [sensitive issue(s)](./SECURITY.md#sensitive-issues) have a separate protocol.
 
 # Contributor conventions/rules
