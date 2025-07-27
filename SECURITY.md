@@ -7,6 +7,8 @@ Asof 2025-07-10 ([commit 4073fc729bdf7eda455a1a9914310e118efa5833](https://githu
 
 Asof [2025-07-26](https://github.com/SwuduSusuwu/SusuLib/discussions/70) ([commit 195acf41b7b90911565990e2d3dd4fe22b667017](https://github.com/SwuduSusuwu/SusuLib/commit/195acf41b7b90911565990e2d3dd4fe22b667017)), this repo switches to a new certificate[^5]. The previous certificate is not known as "compromised", but is inaccessible for now. If possible, will restore that certificate, but the backup has a 32-character password which was forgotten, so vouched for this new certificate with `SHA256:1csQw8HZNJa7t2gbG9/usNZ6cXdlUlSMcA3dVb3j16c` (the certificate which was marked "old" through [commit 4073fc729bdf7eda455a1a9914310e118efa5833](https://github.com/SwuduSusuwu/SusuLib/commit/4073fc729bdf7eda455a1a9914310e118efa5833), vouches for `SHA256:G6I98GU7oMXNmKB/k10nAlZo52bN9y17xvARXjblM2g`).
 
+[Asof 2025-10-25](https://github.com/SwuduSusuwu/SusuLib/discussions/70#discussioncomment-14782700) (this `commit`), <https://github.com/SwuduSusuwu/> switches to a new certificate[^6]. The previous certificates are not known as "compromised", but were used on numerous devices (thus are no longer trustable).
+
 ## Supported versions
 Users can expect that past 2024-06-26, [`trunk`](https://github.com/SwuduSusuwu/SusuPosts/tree/trunk/) passes [_GitHub_'s code reviews](https://github.blog/changelog/2025-04-22-github-actions-workflow-security-analysis-with-codeql-is-now-generally-available/)[^2].
 - If _GitHub_ gives advisories, <https://github.com/SwuduSusuwu/SusuPosts/security/> shows those (the top just shows what is in `SECURITY.md`, so remember to scroll down).
@@ -36,3 +38,5 @@ You can expect:
 [^4]: Asof [commit 4073fc729bdf7eda455a1a9914310e118efa5833](https://github.com/SwuduSusuwu/SusuLib/commit/4073fc729bdf7eda455a1a9914310e118efa5833), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (and the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) have a new certificate. All commits which follow that commit must use that new certificate (`SHA256:8MXQK2Ms1FI4X3BSNbLuYAAMO3MXPQ7GsGH4kcXNDiY`).
 
 [^5]: Asof [commit f766b5c0fa2a87b3f34d3a5ba7dd9092f1dae278](https://github.com/SwuduSusuwu/SusuPosts/commit/f766b5c0fa2a87b3f34d3a5ba7dd9092f1dae278), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (and the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) have a new certificate. All commits which follow that commit must use that new certificate (`SHA256:G6I98GU7oMXNmKB/k10nAlZo52bN9y17xvARXjblM2g`).
+
+[^6]: [Asof 2025-10-25](https://github.com/SwuduSusuwu/SusuLib/discussions/70#discussioncomment-14782700) (this `commit`), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (plus the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) use new sigs. All commits which follow that commit shall use those new sigs (hash: `SHA256:1ywl0RIdF6ZueX1qazgx1ihGDytfKYf9T97gONFroio`).
