@@ -20,5 +20,6 @@
 - [`./posts/SimdGpgpuTpu.md`](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/SimdGpgpuTpu.md)
 - [`./posts/SakuraSchoolHowto.md`](./SakuraSchoolHowto.md)
 - [`./posts/Warning_AI_is_not_good_for_humans_to_use.md`](./Warning_AI_is_not_good_for_humans_to_use.md)
+- [`./posts/ConsumerWarnings/`](./ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
