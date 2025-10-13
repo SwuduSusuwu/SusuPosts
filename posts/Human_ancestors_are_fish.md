@@ -29,6 +29,8 @@ Simple [_OpenGLES2_](https://www.khronos.org/opengles/) fish sim, ([produced thr
 **Q**: "Produce *OpenGLES2* code which moves the sprites of some fish around."
 
 ## [*Grok-2*](https://poe.com/Grok-2)'s *OpenGLES2* fish
+**Notice**: *Grok-2* [used *C* for the original source code](https://github.com/SwuduSusuwu/SusuPosts/blob/0e99e40befe6f982653d7b2c0b0679572f015323/posts/Human_ancestors_are_fish.md#grok-2s-opengles2-fish), what follows is manual conversion to *C++* source code.
+
 `build.sh`
 ```bash
 #!/bin/sh
@@ -44,6 +46,7 @@ return $?
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 
 // Structure to represent a fish
 typedef struct {
@@ -52,153 +55,154 @@ typedef struct {
 	float angle;  // Rotation angle
 } Fish;
 
-// Global variables
-GLuint program;
-GLuint vbo;
-Fish *fishes;
-int num_fishes;
+class Fishes {
+	GLuint program;
+	GLuint vbo;
+	std::vector<Fish> fishes;
+	int num_fishes;
 
-// Vertex shader source
-const char* vertex_shader_source =
-	"attribute vec4 a_position;\n"
-	"attribute vec2 a_texCoord;\n"
-	"uniform mat4 u_mvpMatrix;\n"
-	"varying vec2 v_texCoord;\n"
-	"void main() {\n"
-	"    gl_Position = u_mvpMatrix * a_position;\n"
-	"    v_texCoord = a_texCoord;\n"
-	"}\n";
+	// Vertex shader source
+	const char* vertex_shader_source =
+		"attribute vec4 a_position;\n"
+		"attribute vec2 a_texCoord;\n"
+		"uniform mat4 u_mvpMatrix;\n"
+		"varying vec2 v_texCoord;\n"
+		"void main() {\n"
+		"    gl_Position = u_mvpMatrix * a_position;\n"
+		"    v_texCoord = a_texCoord;\n"
+		"}\n";
 
-// Fragment shader source
-const char* fragment_shader_source =
-	"precision mediump float;\n"
-	"uniform sampler2D u_texture;\n"
-	"varying vec2 v_texCoord;\n"
-	"void main() {\n"
-	"    gl_FragColor = texture2D(u_texture, v_texCoord);\n"
-	"}\n";
+	// Fragment shader source
+	const char* fragment_shader_source =
+		"precision mediump float;\n"
+		"uniform sampler2D u_texture;\n"
+		"varying vec2 v_texCoord;\n"
+		"void main() {\n"
+		"    gl_FragColor = texture2D(u_texture, v_texCoord);\n"
+		"}\n";
 
-// Initialize OpenGL ES
-void init() {
-	// Compile shaders
-	GLuint vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex_shader, 1, &vertex_shader_source, NULL);
-	glCompileShader(vertex_shader);
+	// Initialize OpenGL ES
+	Fishes() {
+		// Compile shaders
+		GLuint vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertex_shader, 1, &vertex_shader_source, NULL);
+		glCompileShader(vertex_shader);
 
-	GLuint fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragment_shader, 1, &fragment_shader_source, NULL);
-	glCompileShader(fragment_shader);
+		GLuint fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragment_shader, 1, &fragment_shader_source, NULL);
+		glCompileShader(fragment_shader);
 
-	// Create program
-	program = glCreateProgram();
-	glAttachShader(program, vertex_shader);
-	glAttachShader(program, fragment_shader);
-	glLinkProgram(program);
+		// Create program
+		program = glCreateProgram();
+		glAttachShader(program, vertex_shader);
+		glAttachShader(program, fragment_shader);
+		glLinkProgram(program);
 
-	// Create VBO for fish sprite
-	GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
-		 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
-		-0.5f,  0.5f, 0.0f, 0.0f, 1.0f,
-		 0.5f,  0.5f, 0.0f, 1.0f, 1.0f
-	};
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	// Initialize fish array
-	num_fishes = 10;
-	fishes = malloc(num_fishes);
-	srand(time(NULL));
-	for (int i = 0; i < num_fishes; i++) {
-		fishes[i].x = (float)rand() / RAND_MAX * 2 - 1;
-		fishes[i].y = (float)rand() / RAND_MAX * 2 - 1;
-		fishes[i].dx = (float)rand() / RAND_MAX * 0.02 - 0.01;
-		fishes[i].dy = (float)rand() / RAND_MAX * 0.02 - 0.01;
-		fishes[i].angle = 0.0f;
-	}
-}
-
-// Update fish positions
-void update(float dt) {
-	for (int i = 0; i < num_fishes; i++) {
-		fishes[i].x += fishes[i].dx * dt;
-		fishes[i].y += fishes[i].dy * dt;
-
-		// Bounce off edges
-		if (fishes[i].x < -1.0f || fishes[i].x > 1.0f) {
-			fishes[i].dx = -fishes[i].dx;
-		}
-		if (fishes[i].y < -1.0f || fishes[i].y > 1.0f) {
-			fishes[i].dy = -fishes[i].dy;
-		}
-
-		// Update rotation angle
-		fishes[i].angle += dt * 2.0f;
-	}
-}
-
-// Render fish sprites
-void render() {
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glUseProgram(program);
-
-	// Set up model-view-projection matrix
-	float mvpMatrix[16] = {
-		1.0f, 0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f, 0.0f,
-		0.0f, 0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 0.0f, 1.0f
-	};
-	GLint mvpMatrixLocation = glGetUniformLocation(program, "u_mvpMatrix");
-	glUniformMatrix4fv(mvpMatrixLocation, 1, GL_FALSE, mvpMatrix);
-
-	// Set up vertex attributes
-	GLint positionLocation = glGetAttribLocation(program, "a_position");
-	glEnableVertexAttribArray(positionLocation);
-	glVertexAttribPointer(positionLocation, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)0);
-
-	GLint texCoordLocation = glGetAttribLocation(program, "a_texCoord");
-	glEnableVertexAttribArray(texCoordLocation);
-	glVertexAttribPointer(texCoordLocation, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
-
-	// Render each fish
-	for (int i = 0; i < num_fishes; i++) {
-		// Set up model matrix for this fish
-		float modelMatrix[16] = {
-			cosf(fishes[i].angle), -sinf(fishes[i].angle), 0.0f, 0.0f,
-			sinf(fishes[i].angle), cosf(fishes[i].angle), 0.0f, 0.0f,
-			0.0f, 0.0f, 1.0f, 0.0f,
-			fishes[i].x, fishes[i].y, 0.0f, 1.0f
+		// Create VBO for fish sprite
+		GLfloat vertices[] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f
 		};
+		glGenBuffers(1, &vbo);
+		glBindBuffer(GL_ARRAY_BUFFER, vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-		// Combine model and projection matrices
-		float combinedMatrix[16];
-		for (int j = 0; j < 16; j++) {
-			combinedMatrix[j] = 0.0f;
-			for (int k = 0; k < 4; k++) {
-				combinedMatrix[j] += mvpMatrix[j / 4 * 4 + k] * modelMatrix[k * 4 + j % 4];
-			}
+		// Initialize fish vector
+		num_fishes = 10;
+		fishes.reserve(num_fishes);
+		srand(time(NULL));
+		for (int i = 0; i < num_fishes; i++) {
+			Fish fish;
+			fish.x = (float)rand() / RAND_MAX * 2 - 1;
+			fish.y = (float)rand() / RAND_MAX * 2 - 1;
+			fish.dx = (float)rand() / RAND_MAX * 0.02 - 0.01;
+			fish.dy = (float)rand() / RAND_MAX * 0.02 - 0.01;
+			fish.angle = 0.0f;
+			fishes.push_back(fish);
 		}
-
-		// Update MVP matrix uniform
-		glUniformMatrix4fv(mvpMatrixLocation, 1, GL_FALSE, combinedMatrix);
-
-		// Draw the fish sprite
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	}
 
-	glDisableVertexAttribArray(positionLocation);
-	glDisableVertexAttribArray(texCoordLocation);
-}
+	// Update fish positions
+	void update(float dt) {
+		for (int i = 0; i < num_fishes; i++) {
+			fishes[i].x += fishes[i].dx * dt;
+			fishes[i].y += fishes[i].dy * dt;
 
-// Clean up resources
-void cleanup() {
-	glDeleteProgram(program);
-	glDeleteBuffers(1, &vbo);
-	free(fishes);
-}
+			// Bounce off edges
+			if (fishes[i].x < -1.0f || fishes[i].x > 1.0f) {
+				fishes[i].dx = -fishes[i].dx;
+			}
+			if (fishes[i].y < -1.0f || fishes[i].y > 1.0f) {
+				fishes[i].dy = -fishes[i].dy;
+			}
+
+			// Update rotation angle
+			fishes[i].angle += dt * 2.0f;
+		}
+	}
+
+	// Render fish sprites
+	void render() {
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		glUseProgram(program);
+
+		// Set up model-view-projection matrix
+		float mvpMatrix[16] = {
+			1.0f, 0.0f, 0.0f, 0.0f,
+			0.0f, 1.0f, 0.0f, 0.0f,
+			0.0f, 0.0f, 1.0f, 0.0f,
+			0.0f, 0.0f, 0.0f, 1.0f
+		};
+		GLint mvpMatrixLocation = glGetUniformLocation(program, "u_mvpMatrix");
+		glUniformMatrix4fv(mvpMatrixLocation, 1, GL_FALSE, mvpMatrix);
+
+		// Set up vertex attributes
+		GLint positionLocation = glGetAttribLocation(program, "a_position");
+		glEnableVertexAttribArray(positionLocation);
+		glVertexAttribPointer(positionLocation, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)0);
+
+		GLint texCoordLocation = glGetAttribLocation(program, "a_texCoord");
+		glEnableVertexAttribArray(texCoordLocation);
+		glVertexAttribPointer(texCoordLocation, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+
+		// Render each fish
+		for (int i = 0; i < num_fishes; i++) {
+			// Set up model matrix for this fish
+			float modelMatrix[16] = {
+				cosf(fishes[i].angle), -sinf(fishes[i].angle), 0.0f, 0.0f,
+				sinf(fishes[i].angle), cosf(fishes[i].angle), 0.0f, 0.0f,
+				0.0f, 0.0f, 1.0f, 0.0f,
+				fishes[i].x, fishes[i].y, 0.0f, 1.0f
+			};
+
+			// Combine model and projection matrices
+			float combinedMatrix[16];
+			for (int j = 0; j < 16; j++) {
+				combinedMatrix[j] = 0.0f;
+				for (int k = 0; k < 4; k++) {
+					combinedMatrix[j] += mvpMatrix[j / 4 * 4 + k] * modelMatrix[k * 4 + j % 4];
+				}
+			}
+
+			// Update MVP matrix uniform
+			glUniformMatrix4fv(mvpMatrixLocation, 1, GL_FALSE, combinedMatrix);
+
+			// Draw the fish sprite
+			glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		}
+
+		glDisableVertexAttribArray(positionLocation);
+		glDisableVertexAttribArray(texCoordLocation);
+	}
+
+	~Fishes() { /* dtor */
+		glDeleteProgram(program);
+		glDeleteBuffers(1, &vbo);
+	}
+};
 ```
 
 ******************************************
