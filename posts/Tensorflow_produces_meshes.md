@@ -4,7 +4,9 @@
 
 # Table of Contents
 - [Discussion](#discussion)
-  - [*Solar-Pro-2*'s `tensorflow` solution](#solar-pro-2s-tensorflow-solution)
+  - [*Solar-Pro-2*'s `tensorflow.py` solution](#solar-pro-2s-tensorflow-solution)
+- [Discussion #2](#discussion-2)
+  - [*Grok-2*'s `tensorflow.java` solution](#grok-2s-tensorflow-solution)
 - [Synopsis](#synopsis)
 
 # Discussion
@@ -14,15 +16,15 @@ From [this discusssion with *Solar-Pro-2*](https://poe.com/s/ikGB3CcLax9Tmla33un
 
 The goal is:
 * Download all public stores of meshes (numerous platforms such as Godot-4 have public stores of meshes which allow unrestricted uses). You can assume local scripts do this
-* Send the descriptions of those meses (plus those meshes) into this `PyTorch` or `tensorflow` tool. For meshes without descriptions, guess will use just the filenames (or use a simple mesh classification tool to produce descriptions for thus), but most have descriptions, so you can just assume that all meshes have descriptions to use.
+* Send the descriptions of those meshes (plus those meshes) into this `PyTorch` or `tensorflow` tool. For meshes without descriptions, guess will use just the filenames (or use a simple mesh classification tool to produce descriptions for thus), but most have descriptions, so you can just assume that all meshes have descriptions to use.
 * Use this (with new descriptions) as a procedural tool to produce new meshes.
 
 Is more natural to map text to textures+mesh (plus, most relevent formats store textures+mesh), but this is just a proof-of-concept, so assume a simple mesh format (which just consists of edges+vertices).
 
 If a serious difficult step is to process the text into info which `tensorflow` can use, you can use "transfer learner" preprocessor steps which leverage current Natural Language Processors to reduce the text into info which is more simple-to-use, but guess that `tensorflow` will do so on its own if given sufficient inputs of `{description, mesh}` tuples."
 
-# *Solar-Pro-2*'s `tensorflow` solution
-**Warning**: [*artificial intelligence*](ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) produced the quote block which follows.
+## *Solar-Pro-2*'s `tensorflow` solution
+Notice: the [*block quote* which follows](https://poe.com/s/ikGB3CcLax9Tmla33unB) was produced from the [*artificial intelligence*](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2).
 > Creating a system that maps text descriptions to 3D meshes is an ambitious but feasible proof-of-concept project. Below is a comprehensive approach using TensorFlow, with notes on how to handle the text-to-mesh translation pipeline. Since this is a complex task, I'll outline the architecture and provide sample code for key components.
 >
 > ---
@@ -274,6 +276,216 @@ If a serious difficult step is to process the text into info which `tensorflow` 
 >   ```
 >
 > Would you like a version using PyTorch + Diffusion for better mesh generation quality? Let me know if you need help with any specific part!
+
+******************************************
+
+# Discussion 2
+From [this discusssion with *Grok-2*](https://poe.com/s/iKmdIza6J4FmtznUuzdu)
+
+**Q**: "Wish you produce `tensorflow_meshes.java` which processes tuples of {text description, mesh} through tensorflow to convert new descriptions into meshes (for procedural sims).
+
+The goal is:
+* Download all public stores of meshes (numerous platforms such as Godot-4 have public stores of meshes which allow unrestricted uses). You can assume local scripts downloaded those (loaded into `class StrMesh {String description, Mesh mesh};`)
+* Send the descriptions of those meshes (plus those meshes) into this `tensorflow` tool.
+* Use this (with new descriptions) as a procedural tool which produces new meshes.
+
+Is more natural to map text to textures+mesh (plus, most relevent formats store textures+mesh), but this is just a proof-of-concept, so assume a simple `class Mesh` (which just consists of edges plus vertices).
+
+If a serious difficult step is to process the text into info which `tensorflow` can use, you can use "transfer learner" preprocessor steps (which leverage current *Natural Language Processors* to reduce the text into info which is more simple-to-use), but if `tensorflow` is setup with sufficient representative `class StrMesh`s (plus sufficient connectome room), `tensorflow` should know how to do process new `String description`s into `Mesh mesh`s on its own"
+
+## *Grok-2*'s `tensorflow` solution
+Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Grok-2*](https://poe.com/Grok-2).
+> Let's approach this step-by-step to create a Java class that uses TensorFlow to process text descriptions and generate meshes. We'll assume that we have a local collection of `StrMesh` objects and that TensorFlow is set up with the necessary libraries.
+>
+> Here's a plan for the `tensorflow_meshes.java` file:
+>
+> 1. Import necessary libraries
+> 2. Define the `StrMesh` class
+> 3. Define the `Mesh` class
+> 4. Create a `TensorFlowMeshes` class with methods for:
+>    - Loading and preprocessing data
+>    - Building and training the model
+>    - Generating new meshes from text descriptions
+> 5. Implement a main method to demonstrate the usage
+>
+> Let's implement this plan:
+>
+> ```java
+> import org.tensorflow.*;
+> import org.tensorflow.op.Ops;
+> import org.tensorflow.op.core.Placeholder;
+> import org.tensorflow.op.math.MatMul;
+> import org.tensorflow.types.TFloat32;
+> import org.tensorflow.types.TString;
+>
+> import java.util.ArrayList;
+> import java.util.List;
+> import java.util.Random;
+>
+> public class tensorflow_meshes {
+>
+>     // Define the StrMesh class
+>     public static class StrMesh {
+>         String description;
+>         Mesh mesh;
+>
+>         public StrMesh(String description, Mesh mesh) {
+>             this.description = description;
+>             this.mesh = mesh;
+>         }
+>     }
+>
+>     // Define the Mesh class
+>     public static class Mesh {
+>         List<float[]> vertices;
+>         List<int[]> edges;
+>
+>         public Mesh(List<float[]> vertices, List<int[]> edges) {
+>             this.vertices = vertices;
+>             this.edges = edges;
+>         }
+>     }
+>
+>     public static class TensorFlowMeshes {
+>         private List<StrMesh> trainingData;
+>         private SavedModelBundle model;
+>
+>         public TensorFlowMeshes(List<StrMesh> trainingData) {
+>             this.trainingData = trainingData;
+>         }
+>
+>         // Method to preprocess the data
+>         private List<StrMesh> preprocessData() {
+>             // In a real implementation, we would use NLP techniques here
+>             // For this proof of concept, we'll just return the original data
+>             return trainingData;
+>         }
+>
+>         // Method to build and train the model
+>         public void buildAndTrainModel() {
+>             try (Graph graph = new Graph()) {
+>                 Ops tf = Ops.create(graph);
+>
+>                 // Input placeholders
+>                 Placeholder<TString> descriptionInput = tf.placeholder(TString.class, Placeholder.shape(Shape.unknown()));
+>                 Placeholder<TFloat32> meshInput = tf.placeholder(TFloat32.class, Placeholder.shape(Shape.unknown()));
+>
+>                 // Simple model (in reality, this would be much more complex)
+>                 MatMul output = tf.math.matMul(descriptionInput, meshInput);
+>
+>                 // In a real implementation, we would add training steps here
+>                 // For this proof of concept, we'll just save the model
+>
+>                 this.model = SavedModelBundle.load("tensorflow_meshes_model", "serve");
+>             }
+>         }
+>
+>         // Method to generate a new mesh from a text description
+>         public Mesh generateMesh(String description) {
+>             if (model == null) {
+>                 throw new IllegalStateException("Model has not been trained and saved yet.");
+>             }
+>
+>             try (Session session = model.session()) {
+>                 Tensor<TString> inputTensor = TString.scalarOf(description);
+>
+>                 // Run the model
+>                 Tensor<?> outputTensor = session.runner()
+>                         .feed("input", inputTensor)
+>                         .fetch("output")
+>                         .run()
+>                         .get(0);
+>
+>                 // Convert the output tensor to a Mesh object
+>                 // This is a simplified version; in reality, this would be more complex
+>                 float[] outputData = new float[outputTensor.numElements()];
+>                 outputTensor.copyTo(outputData);
+>
+>                 List<float[]> vertices = new ArrayList<>();
+>                 List<int[]> edges = new ArrayList<>();
+>
+>                 // Assume the output is a flattened representation of vertices and edges
+>                 int vertexCount = (int) outputData[0];
+>                 int edgeCount = (int) outputData[vertexCount * 3 + 1];
+>
+>                 for (int i = 0; i < vertexCount; i++) {
+>                     float[] vertex = new float[3];
+>                     System.arraycopy(outputData, i * 3 + 1, vertex, 0, 3);
+>                     vertices.add(vertex);
+>                 }
+>
+>                 for (int i = 0; i < edgeCount; i++) {
+>                     int[] edge = new int[2];
+>                     edge[0] = (int) outputData[vertexCount * 3 + i * 2 + 2];
+>                     edge[1] = (int) outputData[vertexCount * 3 + i * 2 + 3];
+>                     edges.add(edge);
+>                 }
+>
+>                 return new Mesh(vertices, edges);
+>             }
+>         }
+>     }
+>
+>     public static void main(String[] args) {
+>         // Create sample training data
+>         List<StrMesh> trainingData = new ArrayList<>();
+>         Random random = new Random();
+>
+>         for (int i = 0; i < 100; i++) {
+>             String description = "Sample description " + i;
+>             List<float[]> vertices = new ArrayList<>();
+>             List<int[]> edges = new ArrayList<>();
+>
+>             for (int j = 0; j < 10; j++) {
+>                 vertices.add(new float[]{random.nextFloat(), random.nextFloat(), random.nextFloat()});
+>             }
+>
+>             for (int j = 0; j < 15; j++) {
+>                 edges.add(new int[]{random.nextInt(10), random.nextInt(10)});
+>             }
+>
+>             trainingData.add(new StrMesh(description, new Mesh(vertices, edges)));
+>         }
+>
+>         // Create and train the model
+>         TensorFlowMeshes tfMeshes = new TensorFlowMeshes(trainingData);
+>         tfMeshes.buildAndTrainModel();
+>
+>         // Generate a new mesh
+>         String newDescription = "A new, unique mesh";
+>         Mesh newMesh = tfMeshes.generateMesh(newDescription);
+>
+>         // Print the result
+>         System.out.println("Generated mesh for description: " + newDescription);
+>         System.out.println("Vertices: " + newMesh.vertices.size());
+>         System.out.println("Edges: " + newMesh.edges.size());
+>     }
+> }
+> ```
+>
+> This implementation provides a basic structure for processing text descriptions and generating meshes using TensorFlow. Here are some key points about this implementation:
+>
+> 1. We've defined the `StrMesh` and `Mesh` classes as specified.
+>
+> 2. The `TensorFlowMeshes` class handles the main functionality:
+>    - It takes a list of `StrMesh` objects as training data.
+>    - The `preprocessData` method is a placeholder for where you would implement NLP techniques to process the text descriptions.
+>    - The `buildAndTrainModel` method creates a very simple model (in reality, this would be much more complex) and saves it.
+>    - The `generateMesh` method uses the trained model to generate a new mesh from a given description.
+>
+> 3. The `main` method demonstrates how to use the class with sample data.
+>
+> Please note that this is a highly simplified proof of concept. In a real-world implementation:
+>
+> - You would need to implement more sophisticated NLP techniques in the `preprocessData` method.
+> - The model architecture in `buildAndTrainModel` would need to be much more complex to handle the task of generating meshes from text.
+> - The `generateMesh` method would need to be adapted to handle the actual output of your model.
+> - You would need to handle loading of real data from the public stores you mentioned.
+> - Error handling and input validation would be crucial in a production environment.
+>
+> To use this in a procedural simulation, you would typically integrate this class into a larger system that can interpret the generated meshes and use them in your simulation environment.
+
+******************************************
 
 # Synopsis
 - This the purpose of this discussion is to show how to produce one of the subsystems of [`./posts/CnsCompress.md`](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md) (which is supposed to use clones of human Central Nervous Systems to do [sensor fusion](https://wikipedia.org/wiki/Sensor_fusion) + compression + decompression (which is <https://github.com/SwuduSusuwu/SusuLib/issues/2>)).
