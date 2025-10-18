@@ -15,6 +15,7 @@
     - [_Markdown_](#markdown)
     - [`git`](#git)
     - [`java`](#java)
+    - [Code generation tool use.](./posts/Code_generation_attributions.md)
   - [Sponsor](#sponsor)
     - [Escrow](#escrow)
     - [Affiliates](#affiliates)
@@ -42,6 +43,7 @@
 - [`./posts/Human_ancestors_are_fish.md`](./posts/Human_ancestors_are_fish.md)
 - [`./posts/Ultrasound_Pointclouds.md`](./posts/Ultrasound_Pointclouds.md) is "**Ultrasound acoustic tools (+ source code which measures echos of numerous transducers to produce volumetric pointclouds of surfaces)**".
 - [`./posts/Laser_Pointclouds.md`](./posts/Laser_Pointclouds.md) is "**Laser tools (+ source code, which measures reflections to produce volumetric pointclouds of surfaces)**"
+- [`./posts/Code_generation_attributions.md`](./posts/Code_generation_attributions.md)
 - [`./posts/ConsumerWarnings/`](./posts/ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
