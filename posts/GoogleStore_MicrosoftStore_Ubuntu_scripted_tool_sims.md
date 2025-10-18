@@ -267,5 +267,6 @@ Wish to know what to download from [*aptitude*](https://packages.ubuntu.com/) (f
 ******************************************
 
 # Synopsis
-[This section](#synopsis) will include resources, in future [versions](https://github.com/SwuduSusuwu/SusuPosts/commits/preview/posts/GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md) of [this document](https://github.com/SwuduSusuwu/SusuPosts/blob/preview/posts/GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md).
+* [`./posts/Physics_sims_which_structures_to_use.md`](./Physics_sims_which_structures_to_use.md) discusses which structures to use for physics sims.
+
 
