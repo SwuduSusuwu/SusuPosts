@@ -1,4 +1,4 @@
-**Physics sims: which structures to use (primitives versus vectors, `double` versus `long`)**
+**Physics sims: which structures to use (primitives versus vectors, `double` versus `long`, `volatile` versus `synchronized` versus `Atomic*`)**
 
 \[[This post](./Physics_sims_structures.md) allows [all uses](https://creativecommons.org/licenses/by/2.0/).\]
 
@@ -6,6 +6,7 @@
 - [Intro](#intro)
   - [Separate variables versus dim lists](#separate-variables-versus-dim-lists)
   - [`double` versus `long`](#double-versus-long)
+  - [`volatile` versus `synchronized` versus `Atomic*`](#volatile-versus-synchronized-versus-atomic-versus)
 - [Synopsis](#synopsis)
 
 # Intro
@@ -46,6 +47,31 @@ Pros of `long[] position;`:
   * All systems allow `long` bitshift (`<<=`, `>>=`) use (with `java`, `double` does not allow `<<=` nor `>>=`, but requires intrinsic functions such as [`Math.scalb`](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#scalb-double-int-)). Versus division (also versus multiplication), bitshifts improve **CPU** use.
   * All positions have similar *resolution* (instead of femtometer *resolution* for *Sol*'s core (millimeter *resolution* for *Pluto*'s surface), the whole planet can have nanometer *resolution*).
   * `long[]` stores sufficient quantized positions to give nanometer *resolution* for the whole surface of the largest planet in our solar system (but with this *resolution*, the distance is limited to a single planet, such as *Jupiter*, with the planet's center-of-mass as origin).
+
+******************************************
+# `volatile` versus `synchronized` versus `Atomic*` versus
+Those are the most popular structures to ensure that multiple [`Thread`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.html)s (or other *units of execution* such as [`java.util.concurrent.ExecutorService`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html)) follow the *spatiotemporal structure* of the source code. More "*explicit*" (*granular*) structures exist, which do not introduce as much *blocks* (as much "*pauses*"), but which are more difficult to use.
+
+## `synchronized`
+If interpretation of so is true (am new to `java`, [so asked *Solar-Pro-2*, which says is true](https://poe.com/s/dTovhHsKEoQ6inFLCpWn)),  <https://johanley.github.io/java-practices-snapshot/topic/TopicAction5ade.html?Id=35> says:
+* `class Foo { synchronized anInstanceFunction( { ... } })` causes such `synchronized` instance functions of `class Foo` to use an exclusive "instance lock" (not possible to choose which functions use which locks, except `static` versus not `static`).
+* `class Foo { synchronized static someStaticFunction( { ... } })` causes such `synchronized` static functions of `class Foo` to use an exclusive "static lock" (not possible to choose which functions use which locks, except `static` versus not `static`).
+* `synchronized(this)` causes the current execution to *block* (to pause) unti no *contexts of execution* use the *instance lock*, irrespective of if the current function is set to `synchronized`.
+* `synchronized(this.getClass())` (which does what `synchronized(Foo.class)` does, if `this.getClass() == Foo`) causes the current execution to *block* (to pause) unti no *contexts of execution* use the *static lock*, irrespective of if the current function is set to `synchronized`.
+
+## `java.util.concurrent.locks.ReentrantLock`
+If interpretation of [this discussion with *Solar-Pro-2*](https://poe.com/s/dTovhHsKEoQ6inFLCpWn) is true:
+* [`java.util.concurrent.locks.ReentrantLock`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html) is the *granular* version of `synchronized`.
+* The code must setup (plus store, plus acquire, plus release) separate `ReentrantLock` instances with *explicit* instructions, thus more difficult to use.
+* Due to separate `ReentrantLock` instances, numerous *units of execution* can use 1 `this`, if those *units of execution* contest for separate `ReentrantLock`s. Thus more *units of execution* (versus `synchronized`, which limits all `synchronized` blocks of `this` to 1 *unit of execution*).
+
+## `volatile primitive` or `AtomicPrimitive`
+If interpretation of so is true, [this discussion with *Solar-Pro-2*](https://poe.com/s/oKlj2EkZqBPioQ1Qgvlf) says:
+* both ensure that `java` follows the explicit temporal precedence of the source code (without `volatile` or `Atomic`, `java` optimizes the execution such that *race conditions* are possible in executables which use multiple executors (such as *thread pools* or **SMP**).
+* both ensure that stores whose size is more than the **CPU** architecture's word size (thus, *64-bit* primitives such as `double` or `long`) are stored whole. With no `volatile` or `Atomic` suffix, stores from one *unit of execution* can cause separate *contexts of execution* which access those addresses to process *spliced* versions ("*tearing*": versions whose first *32-bits* stores the new value but whose second *32-bits* stores the old value).
+  * Just `AtomicPrimitive` suits *64-bit* **CAS** (`volatile long foo = 42; if(42 < ++foo)` is undefined, `AtomicLong foo = 42; if(42 < foo.incrementAndGet())` is true).
+
+[*Solar-Pro-2* says this is true, plus suggests the alternative `java.util.concurrent.atomic`](https://poe.com/s/1rAVvmwTyh2kYFQE22PJ).
 
 ******************************************
 # Synopsis
