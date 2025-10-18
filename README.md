@@ -45,6 +45,7 @@
 - [`./posts/Laser_Pointclouds.md`](./posts/Laser_Pointclouds.md) is "**Laser tools (+ source code, which measures reflections to produce volumetric pointclouds of surfaces)**"
 - [`./posts/Code_generation_attributions.md`](./posts/Code_generation_attributions.md)
 - [`./posts/Physics_sims_which_structures_to_use.md`](./posts/Physics_sims_which_structures_to_use.md)
+- [`./posts/Tensorflow_produces_meshes.md`](./posts/Tensorflow_produces_meshes.md)
 - [`./posts/ConsumerWarnings/`](./posts/ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
