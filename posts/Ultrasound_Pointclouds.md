@@ -294,6 +294,9 @@ The point clouds are for autonomous tools to use to manufacture (not for cars on
 This was produced for use with [*Arduino* / *Elegoo* tools](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/ArduinoElegooTools.md).
 * That post has [a section for how to produce optical point clouds](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/ArduinoElegooTools.md#howto-produce-point-clouds).
 
+## Resources
+[`./Laser_Pointclouds.md`](./Laser_Pointclouds.md) is the laser version of this: "**Laser tools (+ source code, which measures reflections to produce volumetric pointclouds of surfaces)**"
+
 ## Speculative
 The famous question "How is it to live as a bat?" is somewhat answered with this source code: in addition to normal sounds, bats have "echolocation experiences" similar to "synesthesia" (sound signals crossover into visuals) in humans: signals from echos are replaced with (interpolated, smoothed) point-cloud visuals.
 * More difficult to answer is "How is it to live as a computer or Kuratas?", which [this discussion with *Solar-Pro-2*](https://github.com/SwuduSusuwu/SusuJava/blob/pos2/posts/ConcernsOfExistenceMonism.md#what-if-carbon-chauvinism-is-disproven) somewhat answers.
