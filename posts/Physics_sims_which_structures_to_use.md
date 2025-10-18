@@ -126,6 +126,8 @@ If interpretation of so is true, [this discussion with *Solar-Pro-2*](https://po
 
 [`./posts/GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md`](./GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md) lists numerous physics sims for school use.
 
+[`./posts/NaturalPhysicsFormulas.md`](./NaturalPhysicsFormulas.md) lists numerous physics formulas, plus discusses how to use thus for sims.
+
 Most [search results](https://duckduckgo.com/?q=Do+static+arrays+in+Java+have+similar+performance+as+individual+variables%3F+%60double%5B%5D+position+%3D+%7B1%2C+2%7D%60+versus+%60double+x+%3D+2%2C+y+%3D+2%60) for such discussions just show physics engines' documents of `float` versus `double`:
 * <https://docs.godotengine.org/en/stable/tutorials/physics/large_world_coordinates.html>
 * <https://godotengine.org/article/emulating-double-precision-gpu-render-large-worlds/>
