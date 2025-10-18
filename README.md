@@ -40,7 +40,7 @@
 - [`./posts/HowtoForgeNaturalHumanShadows.md`](./posts/HowtoForgeNaturalHumanShadows.md) "**How to forge semblances of humans, plus natural shadows**"
 - [`./posts/GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md`](./posts/GoogleStore_MicrosoftStore_Ubuntu_scripted_tool_sims.md) "**_Google Store_ / _Microsoft Store_ / _Ubuntu_ sims which produce (or script moves with) autonomous tools. Suggest schools to use such sims.**"
 - [`./posts/Human_ancestors_are_fish.md`](./posts/Human_ancestors_are_fish.md)
-- [`./posts/Ultrasound_Pointclouds.md`](./posts/Ultrasound_Pointclouds.md) is "**\[Preview\] Ultrasound acoustic tools (+ source code which measures echos of numerous transducers to produce volumetric pointclouds of surfaces)**".
+- [`./posts/Ultrasound_Pointclouds.md`](./posts/Ultrasound_Pointclouds.md) is "**Ultrasound acoustic tools (+ source code which measures echos of numerous transducers to produce volumetric pointclouds of surfaces)**".
 - [`./posts/ConsumerWarnings/`](./posts/ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
