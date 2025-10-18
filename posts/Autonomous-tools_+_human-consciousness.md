@@ -82,6 +82,7 @@ As to the _TensorFlow_’s architecture to use, have suggestions of modules to p
 # Synopsis + resources
 - [How to improve how fast desktops/laptops/phones execute code | `./posts/SimdGpgpuTpu.md`](./SimdGpgpuTpu.md) shows how to improve *TensorFlow*'s execution.
 - [BUD: Arduino/Elegoo Parkour v0.4.6.2, production + walkthrough + hoverboard tour](https://swudususuwu.substack.com/p/bud-arduinoelegoo-parkour-v0462-walkthrough) shows what simple macros can do.
+- [`./Ultrasound_Pointclouds.md`](./Ultrasound_Pointclouds.md) is "**Ultrasound acoustic tools (+ source code which measures echos of numerous transducers to produce volumetric pointclouds of surfaces)**".
 
 ******************************************
 
