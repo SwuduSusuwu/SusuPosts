@@ -14,6 +14,7 @@
   - [Contributor conventions/rules](#contributor-conventionsrules)
     - [_Markdown_](#markdown)
     - [`git`](#git)
+    - [`java`](#java)
   - [Sponsor](#sponsor)
     - [Escrow](#escrow)
     - [Affiliates](#affiliates)
@@ -96,6 +97,16 @@ Do atomic commits: if swapping the new commit with a previous commit (such as th
 	?[Good first issues to contribute to]: (moved into `#How-to-contribute`)
 ```
 /[Notice: Commit titles can omit backticks (``) if not enough room; the backticks just allow _GitHub_ to do _Markdown_-format code/paths.\]
+
+## `java`
+*Java* source code uses similar rules as `../SusuLib/`'s [**C**/**C++** source](https://github.com/SwuduSusuwu/SusuLib/blob/preview/README.md#cc-source) uses, with a few differences:
+* Both should use `if(...)` for conditions (since searches for `if ` will include *English* sentences), which allows searches for `if(`.
+* Both should use `for(...)` for loops (since searches for `for ` will include *English* sentences), which allows searches for `for(`.
+* Both should use "*camelCase*" for local values (such as `double localValue;`), since this is the most common practice.
+* Both should use "*PascalCase*" for names of types (such as `class NewClass {};` or `enum NewEnum {enumValue};`), since this is the most common practice.
+* Since *Java* does not have `#define`` macros,  `static` constant values at the top of `class`s can use "*CONSTANT_CASE*" (such as `static double VALUE_WHICH_IS_GLOBAL_TO_CLASS;`), which *C++* reserves for macros.
+* Since *Java*'s `Array` is improved (versus **C++**'s primitive version) to allow `primitive[] VALUE_WHICH_IS_AN_ARR;` (which is more simple to use with regular expressions such as `sed` than ``primitive VALUE_WHICH_IS_AN_ARR[]` is), use `primitive[] VALUE_WHICH_IS_AN_ARR;`
+
 ## Sponsor
 To sponsor this (which allows us to produce more source codes), you can use crypto (such as [**Bitcoin**](https://wikipedia.org/wiki/Bitcoin)) to [produce a one-time-use address](https://poe.com/s/IPhIMyuMY6SnYM0yqEJl) (which you deposit funds into), and send the address&private-key to [a contact which `./SECURITY.md` lists](./SECURITY.md#sensitive-issues).
 - Rather than us publish a send-to address (for a particular protocol), this allows us to accept all forms of crypto.
