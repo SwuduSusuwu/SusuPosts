@@ -55,7 +55,7 @@ To ensure consistent code, submissions of code (such as through [pull requests](
 ## _Markdown_
 `` *.md `` shall use:
 - [_GitHub flavored Markdown_](https://github.github.com/gfm/), which is not just compatible with [_GitHub_](https://github.com) but also:
-  - Has lots of [unit tests](https://wikipedia.org/wiki/Unit_test#Agile). Most of the differences from the original _Markdown_ are just so rules are less ambiguous.
+  - Has numerous [unit tests](https://wikipedia.org/wiki/Unit_test#Agile). Most of the differences from the original _Markdown_ are just so rules are less ambiguous.
   - Is close to the original _Markdown_ (thus compatible with most _Markdown_ tools, such as [`glow`](https://github.com/charmbracelet/glow?tab=readme-ov-file#glow)).
 - [_ISO 8601_](https://wikipedia.org/wiki/ISO_8601), which
   - Is the most popular national standard format.
