@@ -7,11 +7,11 @@
 - [Purposes](#purposes)
 - [How to use this](#how-to-use-this)
   - [Download](#download)
-  - [Signature/certificate](#signaturecertificate)
+  - [Signature / certificate](#signature--certificate)
 - [How to contribute](#how-to-contribute)
   - [Beta test (preview branch)](#beta-test-preview-branch)
   - [Good first issues to contribute to](https://github.com/SwuduSusuwu/SusuPosts/contribute)
-  - [Contributor conventions/rules](#contributor-conventionsrules)
+  - [Contributor conventions / rules](#contributor-conventions--rules)
     - [_Markdown_](#markdown)
     - [`git`](#git)
     - [`java`](#java)
@@ -20,7 +20,7 @@
     - [Affiliates](#affiliates)
 
 # Purposes
-[`./.ssh/`](./.ssh/) is to [use signatures / certificates](#signaturecertificate).
+[`./.ssh/`](./.ssh/) is to [use signatures / certificates](#signature--certificate).
 
 [`./posts/`](./posts/) stages posts (virtual schools) for <https://SwuduSusuwu.SubStack.com/> (which includes <https://GitHub.com/SwuduSusuwu/SusuLib/tree/preview/posts/> plus posts which are not about artificial neural tissue, antiviruses, assistants, or autonomous tools).
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
@@ -34,7 +34,7 @@ This repo is new. So that fixes do not require use of `git push --force` on the 
 ## Download
 Download with `git clone https://github.com/SwuduSusuwu/SusuPosts.git` and browse local with `cd mid/ && ls`.
 - To opt-in to the beta (the preview), use `git switch preview` (opt-out with `get switch trunk`).
-## Signature/certificate
+## Signature / certificate
 [`./.ssh/setup.sh`](./setup.sh) is to setup `gpg.ssh.allowedSignersFile` (allows to use `git verify <ref>` or `git log --show-signature`).
 - `git verify <ref>` or `git log —show-signatures` shall match [`./.ssh/sha256.sig`](./.ssh/sha256.sig) for [new commits](https://github.com/SwuduSusuwu/SusuLib/commit/3efe601f15ae0fdfd05cfbc1a75a0e6a4a08124b)
 - You can compare those certificates to [our blog post](https://swudususuwu.substack.com/p/githubcomswudususuwusubstack-certificate-new).)
@@ -49,7 +49,7 @@ View [documented issues](https://github.com/SwuduSusuwu/SusuPosts/issues/) (for 
   - If you found new issue(s) (which aren't due to misconfigurations in your system), [comment on the pull request](https://github.com/SwuduSusuwu/SusuPosts/pull/1) or [post new issue(s)](https://github.com/SwuduSusuwu/SusuPosts/issues/new).
     - Notice: [sensitive issue(s)](./SECURITY.md#sensitive-issues) have a separate protocol.
 
-# Contributor conventions/rules
+# Contributor conventions / rules
 General comment/message syntax rules: `<>` goes around type of option/argument (such as `<commit-hash>`, `[]` goes around optional comments/options/arguments (such as `[<optional fallback value>]`, `...` is affixed to allow multiple options/arguments (such as `[; optional extra arguments]...`). This rule is used to document function arguments (such as `sh`, `C` or `C++` use), plus to document `git` uses.
 To ensure consistent code, submissions of code (such as through [pull requests](https://github.com/SwuduSusuwu/SusuPosts/pulls)) have language-specific syntax rules:
 ## _Markdown_
