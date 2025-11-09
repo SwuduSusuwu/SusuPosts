@@ -494,6 +494,8 @@ From [this discusssion with *Grok-2*](https://poe.com/s/WbJpmsN4zNAOtdoEgSSa)
 
 ### *Grok-2* improves `tensorflow.java`
 Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Grok-2*](https://poe.com/Grok-2).
+
+There were no changes to the quotes, except `preprocessText(...) {...}` was replaced with `` [user edit: poisonous `preprocessText()` snipped] ``.
 > To improve this implementation, we can focus on several areas:
 >
 > 1. **More Sophisticated Model Architecture**: The current model is overly simplistic. We'll implement a more complex neural network structure.
@@ -567,16 +569,7 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 >             return preprocessedData;
 >         }
 >
->         // Basic text preprocessing
->         private String preprocessText(String text) {
->             // Convert to lowercase and remove punctuation
->             text = text.toLowerCase();
->             text = text.replaceAll(Pattern.quote(","), " ");
->             text = text.replaceAll(Pattern.quote("."), " ");
->             text = text.replaceAll(Pattern.quote("!"), " ");
->             text = text.replaceAll(Pattern.quote("?"), " ");
->             return text;
->         }
+>         // [user edit: poisonous `preprocessText()` snipped]
 >
 >         // Method to build and train the model
 >         public void buildAndTrainModel() {
@@ -732,7 +725,7 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 > - Implementing proper data splitting for training and validation.
 > - Adding more extensive logging and debugging capabilities.
 
-Notice: do not suggest to use the quoted `preprocessText()` method, since thus removes important contextual structures.
+Notice: do not suggest to use *Grok-2*'s `preprocessText()` method, since thus removes important contextual structures.
 
 The actual preprocessor should do the steps which `tensorflow` (with huge [datasets](https://www.tensorflow.org/datasets)) should do to the descriptions, so that (with lesser datasets) the descriptions will start in the format which is most suitable for conversion into meshes. For example:
 * `tensorflow` architectures with 10000 layers, trained with:
