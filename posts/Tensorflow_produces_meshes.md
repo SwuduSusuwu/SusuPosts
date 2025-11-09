@@ -7,6 +7,8 @@
   - [*Solar-Pro-2*'s `tensorflow.py` solution](#solar-pro-2s-tensorflow-solution)
 - [Discussion #2](#discussion-2)
   - [*Grok-2*'s `tensorflow.java` solution](#grok-2s-tensorflow-solution)
+  - ["Wish you improve this"](#wish-you-improve-this)
+    - [*Grok-2* improves `tensorflow.java`](#grok-2-improves-tensorflowjava)
 - [Synopsis](#synopsis)
 
 # Discussion
@@ -280,7 +282,7 @@ Notice: the [*block quote* which follows](https://poe.com/s/ikGB3CcLax9Tmla33unB
 ******************************************
 
 # Discussion 2
-From [this discusssion with *Grok-2*](https://poe.com/s/iKmdIza6J4FmtznUuzdu)
+From [this discusssion with *Grok-2*](https://poe.com/s/WbJpmsN4zNAOtdoEgSSa)
 
 **Q**: "Wish you produce `tensorflow_meshes.java` which processes tuples of {text description, mesh} through tensorflow to convert new descriptions into meshes (for procedural sims).
 
@@ -487,6 +489,269 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 
 ******************************************
 
+## "Wish you improve this"
+From [this discusssion with *Grok-2*](https://poe.com/s/WbJpmsN4zNAOtdoEgSSa)
+
+### *Grok-2* improves `tensorflow.java`
+Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Grok-2*](https://poe.com/Grok-2).
+> To improve this implementation, we can focus on several areas:
+>
+> 1. **More Sophisticated Model Architecture**: The current model is overly simplistic. We'll implement a more complex neural network structure.
+> 2. **Data Preprocessing**: We'll add a basic text preprocessing step.
+> 3. **Error Handling**: We'll add more robust error handling.
+> 4. **Realistic Mesh Generation**: We'll improve the mesh generation process to be more realistic.
+> 5. **Configuration and Flexibility**: We'll add configuration options to make the class more flexible.
+>
+> Here's an improved version of the `tensorflow_meshes.java` file:
+>
+> ```java
+> import org.tensorflow.*;
+> import org.tensorflow.op.Ops;
+> import org.tensorflow.op.core.Placeholder;
+> import org.tensorflow.op.nn.*;
+> import org.tensorflow.types.TFloat32;
+> import org.tensorflow.types.TString;
+>
+> import java.util.ArrayList;
+> import java.util.List;
+> import java.util.Random;
+> import java.util.regex.Pattern;
+>
+> public class tensorflow_meshes {
+>
+>     // Define the StrMesh class
+>     public static class StrMesh {
+>         String description;
+>         Mesh mesh;
+>
+>         public StrMesh(String description, Mesh mesh) {
+>             this.description = description;
+>             this.mesh = mesh;
+>         }
+>     }
+>
+>     // Define the Mesh class
+>     public static class Mesh {
+>         List<float[]> vertices;
+>         List<int[]> edges;
+>
+>         public Mesh(List<float[]> vertices, List<int[]> edges) {
+>             this.vertices = vertices;
+>             this.edges = edges;
+>         }
+>     }
+>
+>     public static class TensorFlowMeshes {
+>         private List<StrMesh> trainingData;
+>         private SavedModelBundle model;
+>         private int maxVertices;
+>         private int maxEdges;
+>         private int embeddingSize;
+>         private int hiddenUnits;
+>
+>         public TensorFlowMeshes(List<StrMesh> trainingData, int maxVertices, int maxEdges, int embeddingSize, int hiddenUnits) {
+>             this.trainingData = trainingData;
+>             this.maxVertices = maxVertices;
+>             this.maxEdges = maxEdges;
+>             this.embeddingSize = embeddingSize;
+>             this.hiddenUnits = hiddenUnits;
+>         }
+>
+>         // Method to preprocess the data
+>         private List<StrMesh> preprocessData() {
+>             List<StrMesh> preprocessedData = new ArrayList<>();
+>             for (StrMesh strMesh : trainingData) {
+>                 String processedDescription = preprocessText(strMesh.description);
+>                 preprocessedData.add(new StrMesh(processedDescription, strMesh.mesh));
+>             }
+>             return preprocessedData;
+>         }
+>
+>         // Basic text preprocessing
+>         private String preprocessText(String text) {
+>             // Convert to lowercase and remove punctuation
+>             text = text.toLowerCase();
+>             text = text.replaceAll(Pattern.quote(","), " ");
+>             text = text.replaceAll(Pattern.quote("."), " ");
+>             text = text.replaceAll(Pattern.quote("!"), " ");
+>             text = text.replaceAll(Pattern.quote("?"), " ");
+>             return text;
+>         }
+>
+>         // Method to build and train the model
+>         public void buildAndTrainModel() {
+>             try (Graph graph = new Graph()) {
+>                 Ops tf = Ops.create(graph);
+>
+>                 // Input placeholders
+>                 Placeholder<TString> descriptionInput = tf.placeholder(TString.class, Placeholder.shape(Shape.unknown()));
+>                 Placeholder<TFloat32> meshInput = tf.placeholder(TFloat32.class, Placeholder.shape(Shape.unknown()));
+>
+>                 // Text embedding layer
+>                 Embedding<TFloat32> embedding = tf.nn.embedding(descriptionInput, embeddingSize);
+>
+>                 // LSTM layer
+>                 LstmCell lstmCell = tf.nn.lstmCell(hiddenUnits);
+>                 Rnn<TFloat32> lstmOutput = tf.nn.rnn(lstmCell, embedding);
+>
+>                 // Dense layers for vertices and edges
+>                 Dense<TFloat32> vertexOutput = tf.layers.dense(lstmOutput.output(), maxVertices * 3);
+>                 Dense<TFloat32> edgeOutput = tf.layers.dense(lstmOutput.output(), maxEdges * 2);
+>
+>                 // Combine outputs
+>                 Concat<TFloat32> combinedOutput = tf.concat(List.of(vertexOutput.output(), edgeOutput.output()), 1);
+>
+>                 // In a real implementation, we would add training steps here
+>                 // For this proof of concept, we'll just save the model
+>
+>                 this.model = SavedModelBundle.load("tensorflow_meshes_model", "serve");
+>             } catch (Exception e) {
+>                 System.err.println("Error building and training model: " + e.getMessage());
+>                 throw new RuntimeException("Failed to build and train model", e);
+>             }
+>         }
+>
+>         // Method to generate a new mesh from a text description
+>         public Mesh generateMesh(String description) {
+>             if (model == null) {
+>                 throw new IllegalStateException("Model has not been trained and saved yet.");
+>             }
+>
+>             try (Session session = model.session()) {
+>                 Tensor<TString> inputTensor = TString.scalarOf(preprocessText(description));
+>
+>                 // Run the model
+>                 Tensor<?> outputTensor = session.runner()
+>                         .feed("input", inputTensor)
+>                         .fetch("output")
+>                         .run()
+>                         .get(0);
+>
+>                 // Convert the output tensor to a Mesh object
+>                 float[] outputData = new float[outputTensor.numElements()];
+>                 outputTensor.copyTo(outputData);
+>
+>                 List<float[]> vertices = new ArrayList<>();
+>                 List<int[]> edges = new ArrayList<>();
+>
+>                 // Extract vertices
+>                 for (int i = 0; i < maxVertices * 3; i += 3) {
+>                     float[] vertex = new float[3];
+>                     System.arraycopy(outputData, i, vertex, 0, 3);
+>                     vertices.add(vertex);
+>                 }
+>
+>                 // Extract edges
+>                 for (int i = maxVertices * 3; i < outputData.length; i += 2) {
+>                     int[] edge = new int[2];
+>                     edge[0] = Math.round(outputData[i]);
+>                     edge[1] = Math.round(outputData[i + 1]);
+>                     edges.add(edge);
+>                 }
+>
+>                 return new Mesh(vertices, edges);
+>             } catch (Exception e) {
+>                 System.err.println("Error generating mesh: " + e.getMessage());
+>                 throw new RuntimeException("Failed to generate mesh", e);
+>             }
+>         }
+>     }
+>
+>     public static void main(String[] args) {
+>         // Create sample training data
+>         List<StrMesh> trainingData = new ArrayList<>();
+>         Random random = new Random();
+>
+>         for (int i = 0; i < 100; i++) {
+>             String description = "Sample description " + i;
+>             List<float[]> vertices = new ArrayList<>();
+>             List<int[]> edges = new ArrayList<>();
+>
+>             for (int j = 0; j < 10; j++) {
+>                 vertices.add(new float[]{random.nextFloat(), random.nextFloat(), random.nextFloat()});
+>             }
+>
+>             for (int j = 0; j < 15; j++) {
+>                 edges.add(new int[]{random.nextInt(10), random.nextInt(10)});
+>             }
+>
+>             trainingData.add(new StrMesh(description, new Mesh(vertices, edges)));
+>         }
+>
+>         // Create and train the model
+>         TensorFlowMeshes tfMeshes = new TensorFlowMeshes(trainingData, 10, 15, 128, 256);
+>         tfMeshes.buildAndTrainModel();
+>
+>         // Generate a new mesh
+>         String newDescription = "A new, unique mesh";
+>         try {
+>             Mesh newMesh = tfMeshes.generateMesh(newDescription);
+>
+>             // Print the result
+>             System.out.println("Generated mesh for description: " + newDescription);
+>             System.out.println("Vertices: " + newMesh.vertices.size());
+>             System.out.println("Edges: " + newMesh.edges.size());
+>
+>             // Print first few vertices and edges for demonstration
+>             System.out.println("First 3 vertices:");
+>             for (int i = 0; i < 3 && i < newMesh.vertices.size(); i++) {
+>                 System.out.println(java.util.Arrays.toString(newMesh.vertices.get(i)));
+>             }
+>
+>             System.out.println("First 3 edges:");
+>             for (int i = 0; i < 3 && i < newMesh.edges.size(); i++) {
+>                 System.out.println(java.util.Arrays.toString(newMesh.edges.get(i)));
+>             }
+>         } catch (RuntimeException e) {
+>             System.err.println("Failed to generate mesh: " + e.getMessage());
+>         }
+>     }
+> }
+> ```
+>
+> Key improvements in this version:
+>
+> 1. **More Sophisticated Model Architecture**: We've implemented a more complex model structure using an embedding layer, LSTM, and dense layers for vertices and edges. This is still a simplification, but it's closer to what might be used in practice.
+>
+> 2. **Data Preprocessing**: We've added a basic `preprocessText` method that converts text to lowercase and removes some punctuation. In a real-world scenario, this would be much more sophisticated.
+>
+> 3. **Error Handling**: We've added try-catch blocks and more robust error messages throughout the code.
+>
+> 4. **Realistic Mesh Generation**: The `generateMesh` method now assumes a fixed number of vertices and edges (based on the `maxVertices` and `maxEdges` parameters), which is more realistic for a trained model.
+>
+> 5. **Configuration and Flexibility**: We've added constructor parameters to allow for configuration of the model's architecture and expected mesh size.
+>
+> 6. **Improved Output**: The `main` method now prints out some of the generated vertices and edges for better demonstration of the output.
+>
+> This improved version is still a proof of concept and would need further development for a production-ready system. Some areas for further improvement might include:
+>
+> - Implementing actual training of the model rather than just loading a pre-trained one.
+> - Adding more sophisticated text preprocessing and feature extraction.
+> - Implementing a more complex mesh representation and generation process.
+> - Adding methods for saving and loading the model.
+> - Implementing proper data splitting for training and validation.
+> - Adding more extensive logging and debugging capabilities.
+
+Notice: do not suggest to use the quoted `preprocessText()` method, since thus removes important contextual structures.
+
+The actual preprocessor should do the steps which `tensorflow` (with huge [datasets](https://www.tensorflow.org/datasets)) should do to the descriptions, so that (with lesser datasets) the descriptions will start in the format which is most suitable for conversion into meshes. For example:
+* `tensorflow` architectures with 10000 layers, trained with:
+  * 6 million  `StrMesh`s (which consist of, on average, a thousand characters of description plus 100 thousand edges plus 100 thousand vertices)
+* Should do conversion of those descriptions into structures similar to what [the human central nervous system produces](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md#:~:text=Wernicke). Such structures should include:
+  * low-level versions of abstract concepts (such as references, loops, size or volume)
+  * nestable structures of reference nouns (simple shapes such as prisms or cubes, plus more complex architectural structures such as stools or houses)
+
+Since individual *English* words map to numerous abstract concepts (or to numerous nouns) with contextual cues as to which, the structures for computers should replace those wordgroups with unique tokens which map to specific abstract concepts (or to specific nouns).
+* Preprocessor which do such ["transfer learning"](https://www.tensorflow.org/tutorials/images/transfer_learning), allow much smaller datasets (instead of 6 million examples of `StrMesh`, guess more close to 6 thousand `StrMesh`s will do).
+
+If a neural preprocessor is not suitable (due to licenses or resource use), `preprocessText()` should just do conversion of `description` into semantic structures such as: [*ConceptNet*](https://github.com/commonsense) or [*Resource Description Framework*](https://w3c.github.io/rdf-primer/spec/).
+* ["*Grammar to Graph—An Approach for Semantic Transformation of Annotations to Triples*" | `pubs.usgs.gov`](https://pubs.usgs.gov/publication/sir20255064/full) discusses some of this, but the document seems poisonous, so do not suggest to view thus (inclusion was just due to how terrible the other search results were, plus so those who know of this document will know "conversion of `description` into semantic structures" refers to systems somewhat close to this.)
+* ~redacted search result 2~
+* this short (limited to 2 search results) list is published to show that the assumption --- that this problem (of how to do conversion of *English* into structures suitable for computer use) has known solutions (except synthetic neural tissue, which requires extensive datasets for `tensorflow`) --- was not true, not to recommend (not to suggest, not to endorse) those poisonous results
+
+******************************************
+
 # Synopsis
 - This the purpose of this discussion is to show how to produce one of the subsystems of [`./posts/CnsCompress.md`](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md) (which is supposed to use clones of human Central Nervous Systems to do [sensor fusion](https://wikipedia.org/wiki/Sensor_fusion) + compression + decompression (which is <https://github.com/SwuduSusuwu/SusuLib/issues/2>)).
 - This subsystem has uses for most sims, which [`./posts/Physics_sims_which_structures_to_use.md`](./Physics_sims_which_structures_to_use.md) discusses.
+- [*Grok-2* lists numerous resources to use to improve this](https://poe.com/s/Two3vSyMWTNhl2k1n1iw)
