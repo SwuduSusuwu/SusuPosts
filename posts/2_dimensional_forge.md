@@ -13,6 +13,7 @@ The source code (which follows) was published to warn others how simple this was
 - [Discussion with *Grok-2*](#discussion-with-grok-2)
   - [*Grok-2*'s solution](#grok-2s-solution)
     - [*Grok-2*'s version with occlusion](#grok-2s-version-with-occlusion)
+    - [*Grok-2*'s version with parallax perspectives](#grok-2s-version-with-parallax-perspectives)
 - [Synopsis](#synopsis)
 
 # Discussion with *Solar-Pro-2*
@@ -845,5 +846,176 @@ Around the year *2000*, [edge detection](https://wikipedia.org/wiki/Edge_detecti
 >
 > By following these steps, you can legally publish your source code under the Apache License, Version 2.0.
 
+******************************************
+
+## Request version with parallax perspectives
+From [this discussion with *Grok-2*](https://poe.com/s/HFhFtdo9YtU0bw4juDGI):
+
+**Q**: "Wish you produce a new version of the <https://raw.githubusercontent.com/SwuduSusuwu/SusuPosts/166d6a00d5c9d353df1e8ee7fc34cec365b0d741/posts/2_dimensional_forge.md> source code. This new version should introduce parallax perspectives (pseudo-volumetric)"
+
+### *Grok-2*'s version with parallax perspectives
+Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Grok-2*](https://poe.com/Grok-2).
+> To introduce parallax perspectives (pseudo-volumetric) into the source code for the document at `https://raw.githubusercontent.com/SwuduSusuwu/SusuPosts/166d6a00d5c9d353df1e8ee7fc34cec365b0d741/posts/2_dimensional_forge.md`, we need to modify the existing code to simulate depth perception through layered movement. This will involve adjusting the positions of multiple layers at different speeds to create the illusion of depth. Here's how we can update the code to achieve this:
+>
+> ### Updated Python Script with Parallax Perspectives
+>
+> ```python
+> import cv2
+> import numpy as np
+>
+> class Layer:
+>     def __init__(self, image, depth, mask=None):
+>         self.image = image
+>         self.depth = depth
+>         self.mask = mask
+>
+> def edge_detection(image):
+>     # Convert the image to grayscale
+>     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+>
+>     # Apply Gaussian blur to reduce noise
+>     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+>
+>     # Use Canny edge detection
+>     edges = cv2.Canny(blurred, 100, 200)
+>
+>     # Create a mask from the edges
+>     mask = np.zeros(image.shape[:2], dtype=np.uint8)
+>     mask[edges > 0] = 255
+>
+>     # Apply the mask to the original image to get the sprite
+>     sprite = cv2.bitwise_and(image, image, mask=mask)
+>
+>     return sprite, mask
+>
+> def translate_sprite(sprite, dx, dy):
+>     # Create a translation matrix
+>     M = np.float32([[1, 0, dx], [0, 1, dy]])
+>     # Apply the translation
+>     translated = cv2.warpAffine(sprite, M, (sprite.shape[1], sprite.shape[0]))
+>     return translated
+>
+> def resize_sprite(sprite, scale):
+>     # Calculate new dimensions
+>     new_width = int(sprite.shape[1] * scale)
+>     new_height = int(sprite.shape[0] * scale)
+>     # Resize the sprite
+>     resized = cv2.resize(sprite, (new_width, new_height), interpolation=cv2.INTER_AREA)
+>     return resized
+>
+> def rotate_sprite(sprite, angle):
+>     # Calculate the center of the image
+>     center = (sprite.shape[1] // 2, sprite.shape[0] // 2)
+>     # Create a rotation matrix
+>     M = cv2.getRotationMatrix2D(center, angle, 1.0)
+>     # Apply the rotation
+>     rotated = cv2.warpAffine(sprite, M, (sprite.shape[1], sprite.shape[0]))
+>     return rotated
+>
+> def simulate_motion(sprite, background, x_range, y_range, z_range, frames):
+>     output = []
+>     for i in range(frames):
+>         # Calculate position and size
+>         x = int(x_range[0] + (x_range[1] - x_range[0]) * i / frames)
+>         y = int(y_range[0] + (y_range[1] - y_range[0]) * np.sin(i * np.pi / frames) * 0.5 + 0.5)
+>         scale = 1.0 + (z_range[1] - z_range[0]) * i / frames
+>
+>         # Apply transformations
+>         translated = translate_sprite(sprite, x, y)
+>         resized = resize_sprite(translated, scale)
+>
+>         # Create a composite image
+>         composite = background.copy()
+>         x_offset = max(0, (composite.shape[1] - resized.shape[1]) // 2)
+>         y_offset = max(0, (composite.shape[0] - resized.shape[0]) // 2)
+>         composite[y_offset:y_offset+resized.shape[0], x_offset:x_offset+resized.shape[1]] = \
+>             cv2.add(composite[y_offset:y_offset+resized.shape[0], x_offset:x_offset+resized.shape[1]], resized)
+>
+>         output.append(composite)
+>
+>     return output
+>
+> def composite_layers_with_parallax(layers, frame_number, total_frames):
+>     # Sort layers by depth (closest to farthest)
+>     sorted_layers = sorted(layers, key=lambda x: x.depth, reverse=True)
+>
+>     # Start with a blank canvas
+>     composite = np.zeros_like(sorted_layers[0].image)
+>
+>     for layer in sorted_layers:
+>         # Calculate parallax effect based on depth
+>         parallax_factor = 1 - (layer.depth / max([l.depth for l in layers]))
+>         x_shift = int((frame_number / total_frames) * 50 * parallax_factor)
+>         y_shift = int((frame_number / total_frames) * 20 * parallax_factor)
+>
+>         # Apply translation to the layer
+>         shifted_layer = translate_sprite(layer.image, x_shift, y_shift)
+>
+>         # If the layer has a mask, use it
+>         if layer.mask is not None:
+>             masked_layer = cv2.bitwise_and(shifted_layer, shifted_layer, mask=layer.mask)
+>             composite = cv2.add(composite, masked_layer)
+>         else:
+>             composite = cv2.add(composite, shifted_layer)
+>
+>     return composite
+>
+> # Main execution
+> if __name__ == "__main__":
+>     # Load the original image
+>     original_image = cv2.imread("path/to/your/image.jpg")
+>
+>     # Perform edge detection to create a sprite
+>     sprite, mask = edge_detection(original_image)
+>
+>     # Load multiple background layers
+>     background1 = cv2.imread("path/to/background1.jpg")
+>     background2 = cv2.imread("path/to/background2.jpg")
+>
+>     # Create layers with depth
+>     sprite_layer = Layer(sprite, depth=0, mask=mask)  # Sprite is closest to the viewport
+>     background_layer1 = Layer(background1, depth=1)  # Background 1 is farther away
+>     background_layer2 = Layer(background2, depth=2)  # Background 2 is the farthest
+>
+>     # Simulate motion with parallax effect
+>     total_frames = 30
+>     motion_sequence = []
+>
+>     for frame_number in range(total_frames):
+>         # Create a new frame with the current background and sprite
+>         current_background = Layer(background1, depth=1)
+>         composite = composite_layers_with_parallax([sprite_layer, current_background, background_layer2], frame_number, total_frames)
+>         motion_sequence.append(composite)
+>
+>     # Save the motion sequence as a video
+>     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+>     out = cv2.VideoWriter('output.mp4', fourcc, 30.0, (background1.shape[1], background1.shape[0]))
+>
+>     for frame in motion_sequence:
+>         out.write(frame)
+>
+>     out.release()
+>
+>     # Create a static composite image with multiple backgrounds and occlusion
+>     static_composite = composite_layers_with_parallax([sprite_layer, background_layer1, background_layer2], 0, 1)
+>
+>     cv2.imwrite("static_composite_image.jpg", static_composite)
+>
+>     print("Processing complete. Output saved as 'output.mp4' and 'static_composite_image.jpg'.")
+> ```
+>
+> ### Explanation of Changes:
+>
+> 1. **Parallax Effect Function**: A new function `composite_layers_with_parallax` has been introduced to handle the parallax effect. This function applies different shifts to each layer based on its depth, creating the illusion of depth through movement.
+>
+> 2. **Parallax Calculation**: The parallax effect is calculated using a factor derived from the layer's depth relative to the maximum depth of all layers. This factor determines how much each layer should shift in relation to the others.
+>
+> 3. **Motion Simulation**: The main execution now iterates through frames, applying the parallax effect to each frame before saving it to the motion sequence.
+>
+> By implementing these changes, the updated script simulates a pseudo-volumetric effect through parallax perspectives, enhancing the visual depth in the resulting images and video.
+
+******************************************
+
 # Synopsis
 <https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md> discusses the modern (uses synthetic neural tissue, such as `tensorflow`) version of this, which produces volumetric shows with true shadows. But for now, the source code is not suitable to publish. Plus, the resource use is rediculous (do not have access to computers suitable to use this).
+
