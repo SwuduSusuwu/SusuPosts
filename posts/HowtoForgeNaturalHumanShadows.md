@@ -111,64 +111,126 @@ Solution: formulas which start with "hardcoded values" (`const` / `static` coeff
 [This news article discusses how such tools were used to produce realistic footage of former president *Barack Obama* saying things which were never said](https://www.bbc.com/news/technology-43639704), plus the tools which produced such are available for all to download/use.
 - What is impressive about those tools is how few samples of target are required for realistic synthesis, plus how smooth the synthesized lip motions (which match those synthetic dialogues) produced are. Since public (low cost or no cost) tools can produce realistic forgeries, who can deny that digital footage is now simple to spoof?
 
-******
+******************************************
 
-[This discussion with *Solar-Pro-2*](https://poe.com/s/QlntSwmq3kFDX1lxUnMo) lists numerous tools which consumers can now use to forge human semblances with natural shadows:
+[This discussion with *Solar-Pro-2*](https://poe.com/s/khKTXjwRg7tOqcb4GuVd) lists numerous tools which consumers can now use to forge human semblances with natural shadows:
+
 ## **Q**:
-"@Solar-Pro-2 Wish to know of some software published which uses tools such as those to forge visuals of humans with natural shadows"
-## *Solar-Pro-2*'s response
-Notice: the [*block quote* which follows](https://poe.com/s/QlntSwmq3kFDX1lxUnMo) was produced from the [*artificial intelligence*](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2).
-> There are several software tools and platforms that leverage advanced techniques (including AI, 3D modeling, and rendering) to create forged visuals of humans with realistic shadows and lighting. Here are some notable examples:
->
-> ### **1. Deepfake & AI Video Generation Tools**
-> - **DeepFaceLab** / **FaceSwap**: While primarily for face-swapping, these tools can be combined with 3D rendering pipelines to add realistic shadows.
->   - *Shadow Integration*: Requires manual compositing in tools like Blender or After Effects for natural shadows.
->   - [DeepFaceLab GitHub](https://github.com/iperov/DeepFaceLab)
->
-> - **Runway ML** / **Stable Video Diffusion**: AI-based video generators that can synthesize human faces/motions with some degree of environmental context (shadows may appear depending on training data).
->   - [Runway ML](https://runwayml.com)
->
-> - **DALL·E 3** / **MidJourney** (with video extensions): Text-to-image tools that can generate photorealistic humans with shadows. When combined with tools like **Luma AI** (3D reconstruction from images), they can create more realistic 3D visuals.
->   - [DALL·E 3](https://openai.com/dall-e-3)
->   - [Luma AI](https://luma.ai)
->
-> ### **2. 3D Modeling & Animation Software with Realistic Lighting**
-> - **Blender** (with Cycles/XL Renderer):
->   - **Capabilities**: Import 3D human models (e.g., from Mixamo), apply physics-based lighting, and generate natural shadows.
->   - **Add-ons**: Tools like **Mannequin** or **MakeHuman** help create realistic human models with dynamic posing.
->   - [Blender Tutorials on Lighting](https://www.blender.org/support/tutorials/)
->
-> - **Unreal Engine 5** (Metahuman + Lumen):
->   - **Metahuman Creator**: Generates hyper-realistic digital humans.
->   - **Lumen Dynamic Global Illumination**: Automatically creates realistic shadows and lighting in real-time.
->   - [Unreal Engine Metahuman](https://www.unrealengine.com/metahuman)
->
-> - **Unity** (with HDRP & High Definition Render Pipeline):
->   - Supports realistic shadow casting for 3D humans using HDRI lighting.
->
-> ### **3. Specialized Forgery & Deepfake Platforms**
-> - **Reface (now called HitPaw Photo AI)**: Mobile app for face-swapping with basic shadow matching.
-> - **ZAO**: Chinese app for deepfake videos (limited shadow realism without post-processing).
->
-> - **DeepBrain AI**: Generates AI avatars with realistic shadows in synthetic environments.
->   - [DeepBrain AI Studio](https://deepbrain.ai)
->
-> ### **4. AR/VR & Real-Time Forgery Tools**
-> - **Microsoft IllumiRoom** (historical/academic): Projected AR with shadow simulation (no longer actively developed).
-> - **NVIDIA Omniverse**: For photorealistic simulations with physics-based rendering (shadows, reflections).
->   - [NVIDIA Omniverse](https://developer.nvidia.com/omniverse)
->
-> ### **5. Commercial Forgery Services**
-> - **Synthesia** / **Colossyan**: AI video generators that create talking avatars with synthetic backgrounds/shadows.
->   - [Synthesia](https://www.synthesia.io)
->
-> - **D-ID**: Creates deepfake videos with adjustable lighting and shadows.
->   - [D-ID Creative Reality Studio](https://d-id.com)
->
-> ### **Key Considerations for Realistic Shadows**
-> - **3D Rendering** (Blender, Unreal) is superior for controllable shadows.
-> - **AI-only tools** (Stable Diffusion, DALL·E) may lack physical accuracy unless post-processed.
-> - **Hybrid workflows** (AI-generated textures + 3D rendering) yield the most convincing results.
->
-> Would you like details on any specific tool or technique?
+> <https://raw.githubusercontent.com/SwuduSusuwu/SusuPosts/076453e321ce832f1ea40b9a0e3587025eb4da3d/posts/HowtoForgeNaturalHumanShadows.md> says how to extract meshes+textures+motions from a few images (or from motion pictures) of humans, plus use thus to produce close-to-natural motion pictures which use motions from other humans.
+> Some tools are listed which include renderers which can use textures+meshes+motions, or simple whole-solutions which can load simple dance motions onto uploaded pictures of humans, but no tools are listed which do the whole process (turn humans into textures+meshes+motions, plus swap motions from other sources): wish that you list the tools most close to this.
 
+## *Solar-Pro-2*'s response
+Notice: the [*block quote* which follows](https://poe.com/s/khKTXjwRg7tOqcb4GuVd) was produced from the [*artificial intelligence*](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2).
+> The document you referenced discusses methods for forging natural human shadows and photorealistic imagery by extracting meshes, textures, and motions from source material. Below is a curated list of tools and pipelines that approach or partially achieve the **full process** of extracting human models (meshes/textures/motions) and swapping/reassigning motions from other sources. Note that no single tool does *everything* seamlessly, but combinations of these can achieve the desired workflow:
+>
+> ---
+>
+> ### **1. 3D Human Extraction & Animation Tools**
+> These tools focus on extracting 3D human models (meshes, textures, and motions) from 2D images or videos and reanimating them.
+>
+> - **DeepHuman (CVPR 2020)**
+>   - **Capability**: Extracts textured 3D mesh from single/multi-view images. Supports motion transfer from other human videos.
+>   - **GitHub**: [DeepHuman](https://github.com/apart-research/DeepHuman)
+>   - **Limitations**: Requires multi-view inputs for best results. Motion retargeting is research-grade.
+>
+> - **THuman++**
+>   - **Capability**: Large dataset of 3D textured human models with realistic poses. Can be used with tools like [PyMAF](https://github.com/ywang71/PyMAF) for pose estimation.
+>   - **Dataset**: [THuman++](http://www.thuman.cs.technion.ac.il/)
+>
+> - **Neural Actor (SIGGRAPH 2023)**
+>   - **Capability**: Extracts animatable human models from monocular videos and enables motion transfer.
+>   - **Paper/Project**: [Neural Actor](https://neural-actor.github.io/)
+>
+> - **MonoperfCap (CVPR 2021)**
+>   - **Capability**: Captures dynamic 3D human performances from monocular videos with textures.
+>   - **GitHub**: [MonoperfCap](https://github.com/AGZ123/MonoperfCap)
+>
+> ---
+>
+> ### **2. Motion Retargeting & Animation Tools**
+> These tools specialize in transferring motions between different human models.
+>
+> - **VIBE (ECCV 2020)**
+>   - **Capability**: Predicts 3D human pose and motion from video. Can be combined with other tools for retargeting.
+>   - **GitHub**: [VIBE](https://github.com/mkocabas/VIBE)
+>
+> - **AmaAss (Open Source)**
+>   - **Capability**: Retargets motion capture data to different body shapes. Integrates with Blender.
+>   - **GitHub**: [AmaAss](https://github.com/fabbar/amaass)
+>
+> - **Mixamo (Adobe)**
+>   - **Capability**: Upload a 3D human model and apply pre-made animations or auto-retarget motions.
+>   - **Website**: [Mixamo](https://www.mixamo.com/)
+>   - **Limitations**: Requires a base 3D model (not extracted from images).
+>
+> ---
+>
+> ### **3. End-to-End Photo-Realistic Rendering**
+> For generating natural shadows and photorealistic outputs after extracting/animating models.
+>
+> - **Unreal Engine 5 (MetaHuman + Lumen)**
+>   - **Capability**: High-fidelity rendering with dynamic lighting/shadows. Import 3D models and animate with motion capture data.
+>   - **MetaHuman Creator**: [Unreal MetaHuman](https://www.unrealengine.com/metahuman)
+>
+> - **Blender + iVMS (Inverse Kinematics)**
+>   - **Capability**: Manual rigging and motion transfer. Use add-ons like [Auto-Rig Pro](https://blendermarket.com/products/auto-rig-pro) for advanced posing.
+>
+> - **NVIDIA Omniverse (Audio2Face + Kaolin)**
+>   - **Capability**: Drives 3D faces/characters from audio or motion data with realistic physics.
+>   - **Tools**: [Audio2Face](https://developer.nvidia.com/audio2face)
+>
+> ---
+>
+> ### **4. Hybrid Pipelines (Research-Level)**
+> For advanced users combining multiple tools:
+>
+> 1. **Extract 3D Model**: Use **DeepHuman** or **Neural Actor** from monocular video.
+> 2. **Retarget Motion**: Use **AmaAss** or **Mixamo** to apply motions from another source.
+> 3. **Render**: Import into **Unreal Engine 5** or **Blender** with environment lighting for natural shadows.
+>
+> ---
+>
+> ### **5. Commercial/All-in-One Solutions**
+> These platforms aim to streamline the entire pipeline—from 2D image/video input to 3D model extraction, motion transfer, and photorealistic rendering—with minimal technical expertise.
+>
+> - **DeepMotion Animate 3D**
+>   - **Capability**: Converts 2D videos into 3D animatable models. Supports motion transfer between characters. Outputs can be rendered with realistic shadows/lighting.
+>   - **Website**: [DeepMotion](https://www.deepmotion.com/animate3d)
+>   - **Use Case**: Ideal for game developers or animators needing to repurpose motion data.
+>
+> - **Pinscreen (LiveSync)**
+>   - **Capability**: Real-time 3D facial reconstruction and animation from monocular video. Can swap facial expressions/motions between actors.
+>   - **Website**: [Pinscreen](https://www.pinscreen.com/)
+>   - **Use Case**: Focused on hyper-realistic facial animation for VFX/AR.
+>
+> - **Soul Machines Digital People**
+>   - **Capability**: Creates AI-driven 3D avatars with lifelike facial animations and speech synchronization. Motion data can be swapped or scripted.
+>   - **Website**: [Soul Machines](https://www.soulmachines.com/)
+>   - **Use Case**: Virtual assistants, digital humans for marketing/business.
+>
+> - **Adobe Substance 3D Sampler + Mixamo**
+>   - **Capability**: Extract textures/materials from photos (Sampler), then rig/animate models with Mixamo’s motion library.
+>   - **Integration**: Works within Adobe’s ecosystem for consistent workflows.
+>   - **Website**: [Substance 3D](https://www.adobe.com/products/substance3d.html)
+>
+> - **Reallusion iClone + Character Creator**
+>   - **Capability**: Photo-to-3D model extraction, motion capture retargeting, and real-time rendering with natural shadows/lighting.
+>   - **Website**: [Reallusion](https://www.reallusion.com/)
+>   - **Use Case**: Fast animation production for indie filmmakers/gamers.
+>
+> - **Temporary/Freemium Tools**
+>   - **Luma AI** ([luma.ai](https://www.luma.ai/)): Converts photos/videos into 3D models with basic animation support.
+>   - **Kaedim**: Automates 3D model extraction from concept art for games.
+>
+> ---
+>
+> ### **Key Considerations**
+> - **Accuracy vs. Speed**: Research tools (e.g., Neural Actor) offer higher fidelity but require technical setup. Commercial tools trade some realism for ease of use.
+> - **Motion Swapping**: Most tools require manual tweaking for perfect retargeting (e.g., adjusting arm lengths in AmaAss).
+> - **Shadows/Physics**: For natural shadows, render in engines like Unreal Engine 5 (with Lumen dynamic lighting) or Blender Cycles.
+>
+> If your goal is a **fully automated pipeline**, combining **DeepHuman/Neural Actor** (extraction) → **AmaAss/Mixamo** (motion retargeting) → **Unreal Engine 5** (rendering) is the closest research-grade approach. For commercial needs, **DeepMotion** or **Reallusion** may suffice.
+>
+> Would you like more details on any specific tool or workflow?
+
+[This older discussion with *Solar-Pro-2*](https://poe.com/s/QlntSwmq3kFDX1lxUnMo) is [preserved for historical value](https://github.com/SwuduSusuwu/SusuPosts/blob/076453e321ce832f1ea40b9a0e3587025eb4da3d/posts/HowtoForgeNaturalHumanShadows.md#q) (the tools from the older discussion do not match as close, but the older discussion was used as some of the input to *Solar-Pro-2*).
