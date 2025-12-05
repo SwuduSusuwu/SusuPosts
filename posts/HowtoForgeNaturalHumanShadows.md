@@ -120,7 +120,7 @@ Solution: formulas which start with "hardcoded values" (`const` / `static` coeff
 > Some tools are listed which include renderers which can use textures+meshes+motions, or simple whole-solutions which can load simple dance motions onto uploaded pictures of humans, but no tools are listed which do the whole process (turn humans into textures+meshes+motions, plus swap motions from other sources): wish that you list the tools most close to this.
 
 ## *Solar-Pro-2*'s response
-Notice: the [*block quote* which follows](https://poe.com/s/khKTXjwRg7tOqcb4GuVd) was produced from the [*artificial intelligence*](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2).
+Notice: the [*block quote* which follows](https://poe.com/s/khKTXjwRg7tOqcb4GuVd) was produced from the [*artificial intelligence*](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md) known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2) (unless the row says "\[User edit: ...\]"). The original from *Solar-Pro-2* is [preserved for historical value](https://github.com/SwuduSusuwu/SusuPosts/blob/3f0a88e5e5e1fff1c712f9541120b67a6c7ea3e3/posts/HowtoForgeNaturalHumanShadows.md#solar-pro-2s-response).
 > The document you referenced discusses methods for forging natural human shadows and photorealistic imagery by extracting meshes, textures, and motions from source material. Below is a curated list of tools and pipelines that approach or partially achieve the **full process** of extracting human models (meshes/textures/motions) and swapping/reassigning motions from other sources. Note that no single tool does *everything* seamlessly, but combinations of these can achieve the desired workflow:
 >
 > ---
@@ -130,7 +130,7 @@ Notice: the [*block quote* which follows](https://poe.com/s/khKTXjwRg7tOqcb4GuVd
 >
 > - **DeepHuman (CVPR 2020)**
 >   - **Capability**: Extracts textured 3D mesh from single/multi-view images. Supports motion transfer from other human videos.
->   - **GitHub**: [DeepHuman](https://github.com/apart-research/DeepHuman)
+>   - **GitHub**: [DeepHuman](https://github.com/apart-research/DeepHuman) \[User edit: is now `404 not found`, moved to <https://github.com/ZhengZerong/DeepHuman>\]
 >   - **Limitations**: Requires multi-view inputs for best results. Motion retargeting is research-grade.
 >
 > - **THuman++**
@@ -139,7 +139,8 @@ Notice: the [*block quote* which follows](https://poe.com/s/khKTXjwRg7tOqcb4GuVd
 >
 > - **Neural Actor (SIGGRAPH 2023)**
 >   - **Capability**: Extracts animatable human models from monocular videos and enables motion transfer.
->   - **Paper/Project**: [Neural Actor](https://neural-actor.github.io/)
+>   - **Paper/Project**: [Neural Actor](https://neural-actor.github.io/) \[User edit: is now `404 not found`, moved to <https://arxiv.org/abs/2106.02019>\]
+>   - \[User edit: **GitHub**: [Neural Actor](https://github.com/lingjie0206/Neural_Actor_Main_Code). *Solar-Pro-2*'s original response does not include this\]
 >
 > - **MonoperfCap (CVPR 2021)**
 >   - **Capability**: Captures dynamic 3D human performances from monocular videos with textures.
