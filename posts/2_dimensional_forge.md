@@ -8,6 +8,7 @@
 The source code (which follows) was published to [warn others how simple this was to do](./ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md#goals--purposes-of-this), not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use the source code (with images which you own) to produce cartoons.
 
 # Table of Contents
+- [What are *sprites*](#what-are-sprites)
 - [Discussion with *Solar-Pro-2*](#discussion-with-solar-pro-2)
   - [*Solar-Pro-2*'s solution](#solar-pro-2s-solution)
     - [*Solar-Pro-2*'s version with occlusion](#solar-pro-2s-version-with-occlusion)
@@ -18,6 +19,11 @@ The source code (which follows) was published to [warn others how simple this wa
       - [*Grok-2*'s `java` parallax version](#grok-2s-java-parallax-version)
 - [Synopsis](#synopsis)
 
+******************************************
+# What are *sprites*
+This document uses [`./Physics_sims_which_structures_to_use.md#popular-structures-for-sims`](./Physics_sims_which_structures_to_use.md#popular-structures-for-sims)'s definitions of *sprites*.
+
+******************************************
 # Discussion with *Solar-Pro-2*
 [From this discussion](https://poe.com/s/4uZG9PNiP4CmC6ED4d3y):
 

@@ -2,7 +2,10 @@
 
 \[[This post](./Tensorflow_meshes.md) is released through [*Creative Commons Attribution 2*](https://creativecommons.org/licenses/by/2.0/).\]
 
+[`tensorflow`](https://github.com/tensorflow/tensorflow) loads examples of `{input, output}` (which is `{question, answer}`) to produce connectomes (groups of synapses) which process future questions into new answers.
+
 # Table of Contents
+- [What are meshes](#what-are-meshes)
 - [Discussion](#discussion)
   - [*Solar-Pro-2*'s `tensorflow.py` solution](#solar-pro-2s-tensorflow-solution)
 - [Discussion #2](#discussion-2)
@@ -11,6 +14,13 @@
     - [*Grok-2* improves `tensorflow.java`](#grok-2-improves-tensorflowjava)
       - [Sub-discussion for `textProcessor`](./DescriptionPreprocessor.md)
 - [Synopsis](#synopsis)
+
+# What are meshes
+This document uses [`./Physics_sims_which_structures_to_use.md#popular-structures-for-sims`](./Physics_sims_which_structures_to_use.md#popular-structures-for-sims)'s definitions of *renderers* + *descriptions* + *textures* + *meshes*.
+
+Thus, the purpose of this document is to assist *renderer* usage (allow to give simple descriptions to `tensorflow`, which then produces new *meshes*).
+
+The formulas (in the discussions which follow) use `description`s to produce `mesh`s. Such formulas are also suitable to use `description`s to produce `texture`s.
 
 # Discussion
 From [this discusssion with *Solar-Pro-2*](https://poe.com/s/ikGB3CcLax9Tmla33unB):
@@ -750,3 +760,4 @@ If a neural preprocessor is not suitable (due to licenses or resource use), `pre
 - This subsystem has uses for most sims, which [`./posts/Physics_sims_which_structures_to_use.md`](./Physics_sims_which_structures_to_use.md) discusses.
 - [*Grok-2* lists numerous resources to use to improve this](https://poe.com/s/Two3vSyMWTNhl2k1n1iw)
 - [Sub-discussion for `textProcessor`](./DescriptionPreprocessor.md)
+

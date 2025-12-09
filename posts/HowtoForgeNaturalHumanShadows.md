@@ -7,12 +7,18 @@ Fair-use attribution: [cover photo is *Apple*’s new “*Final Cut Pro*” digi
 The architecture (which follows) was published [to warn others how simple it is to forge motion images](./ConsumerWarnings/Jurisprudence_tools_which_forge_humans.md#goals--purposes-of-this), not to encourage someone to do so. Most jurisdictions do not allow you to forge evidence; the purpose of this post is just to warn others not to trust images. You are allowed to use this architecture (plus the listed tools) with your own images.
 
 # Table of Contents
+- [Definitions](#definitions)
 - [Intro](#intro)
   - [*Artificial Neural Tissues* such as `tensorflow` which forge semblances of humans](#artificial-neural-tissues-such-as-tensorflow-which-forge-semblances-of-humans)
   - [Simple tools (to forge without *Artificial Neural Tissues*)](#simple-tools-to-forge-without-artificial-neural-tissues)
 - [Synopsis](#synopsis)
   - [*Solar-Pro-2* lists tools which forge semblances with natural shadows](#q)
 
+******************************************
+# Definitions
+This document uses [`./Physics_sims_which_structures_to_use.md#popular-structures-for-sims`](./Physics_sims_which_structures_to_use.md#popular-structures-for-sims)'s definitions of *textures* + *sprites* + *vertices* + *meshes* + *descriptions*.
+
+******************************************
 # Intro
 [Image manipulation through *Adobe Photoshop* became common in the year *1992*](https://wikipedia.org/wiki/Adobe_Photoshop#Early_history).
 
