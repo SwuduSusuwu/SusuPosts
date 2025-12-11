@@ -14,6 +14,7 @@ The source code (which follows) was published to warn others how simple this was
   - [*Grok-2*'s solution](#grok-2s-solution)
     - [*Grok-2*'s version with occlusion](#grok-2s-version-with-occlusion)
     - [*Grok-2*'s version with parallax perspectives](#grok-2s-version-with-parallax-perspectives)
+      - [*Grok-2*'s `java` parallax version](#grok-2s-java-parallax-version)
 - [Synopsis](#synopsis)
 
 # Discussion with *Solar-Pro-2*
@@ -1015,7 +1016,214 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 > By implementing these changes, the updated script simulates a pseudo-volumetric effect through parallax perspectives, enhancing the visual depth in the resulting images and video.
 
 ******************************************
+## Request `java` version with parallax perspectives
+[From this discussion with *Grok-2*](https://poe.com/s/echNr7PybgUajx6qMOnA)
+> Wish you do conversion of <https://raw.githubusercontent.com/SwuduSusuwu/SusuPosts/c1985302c66cc6448de7e15f3637bed765105356/posts/2_dimensional_forge.md> to `java`
+> The best source code to use from thus is the version at the bottom (which includes parallax views), but you can also include functions from the other versions
 
+### *Grok-2*'s `java` parallax version
+Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Grok-2*](https://poe.com/Grok-2).
+> Here's the conversion of the Python script from the document to Java, focusing on the version with parallax perspectives but also including relevant functions from other versions. This Java code will implement edge detection, sprite manipulation, geometric transformations, and the parallax effect as described in the original document.
+>
+> ```java
+> import org.opencv.core.*;
+> import org.opencv.imgcodecs.Imgcodecs;
+> import org.opencv.imgproc.Imgproc;
+> import org.opencv.videoio.VideoWriter;
+> import org.opencv.videoio.Videoio;
+>
+> import java.util.ArrayList;
+> import java.util.Collections;
+> import java.util.List;
+>
+> public class SpriteManipulationWithParallax {
+>
+>     static {
+>         // Load the native OpenCV library
+>         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+>     }
+>
+>     // Layer class to encapsulate image, depth, and optional mask
+>     static class Layer {
+>         Mat image;
+>         double depth;
+>         Mat mask;
+>
+>         Layer(Mat image, double depth, Mat mask) {
+>             this.image = image;
+>             this.depth = depth;
+>             this.mask = mask;
+>         }
+>     }
+>
+>     // Edge detection function
+>     public static Mat[] edgeDetection(Mat image) {
+>         Mat gray = new Mat();
+>         Mat blurred = new Mat();
+>         Mat edges = new Mat();
+>         Mat mask = new Mat(image.rows(), image.cols(), CvType.CV_8U);
+>         Mat sprite = new Mat();
+>
+>         // Convert the image to grayscale
+>         Imgproc.cvtColor(image, gray, Imgproc.COLOR_BGR2GRAY);
+>
+>         // Apply Gaussian blur to reduce noise
+>         Imgproc.GaussianBlur(gray, blurred, new Size(5, 5), 0);
+>
+>         // Use Canny edge detection
+>         Imgproc.Canny(blurred, edges, 100, 200);
+>
+>         // Create a mask from the edges
+>         mask.setTo(new Scalar(0));
+>         mask.setTo(new Scalar(255), edges);
+>
+>         // Apply the mask to the original image to get the sprite
+>         Core.bitwise_and(image, image, sprite, mask);
+>
+>         return new Mat[]{sprite, mask};
+>     }
+>
+>     // Function to translate sprite
+>     public static Mat translateSprite(Mat sprite, double dx, double dy) {
+>         Mat M = Mat.zeros(2, 3, CvType.CV_32F);
+>         M.put(0, 0, 1, 0, dx);
+>         M.put(1, 0, 0, 1, dy);
+>
+>         Mat translated = new Mat();
+>         Imgproc.warpAffine(sprite, translated, M, new Size(sprite.cols(), sprite.rows()));
+>         return translated;
+>     }
+>
+>     // Function to resize sprite
+>     public static Mat resizeSprite(Mat sprite, double scale) {
+>         int newWidth = (int) (sprite.cols() * scale);
+>         int newHeight = (int) (sprite.rows() * scale);
+>         Mat resized = new Mat();
+>         Imgproc.resize(sprite, resized, new Size(newWidth, newHeight), 0, 0, Imgproc.INTER_AREA);
+>         return resized;
+>     }
+>
+>     // Function to rotate sprite
+>     public static Mat rotateSprite(Mat sprite, double angle) {
+>         Point center = new Point(sprite.cols() / 2, sprite.rows() / 2);
+>         Mat M = Imgproc.getRotationMatrix2D(center, angle, 1.0);
+>         Mat rotated = new Mat();
+>         Imgproc.warpAffine(sprite, rotated, M, new Size(sprite.cols(), sprite.rows()));
+>         return rotated;
+>     }
+>
+>     // Function to simulate motion
+>     public static List<Mat> simulateMotion(Mat sprite, Mat background, double[] xRange, double[] yRange, double[] zRange, int frames) {
+>         List<Mat> output = new ArrayList<>();
+>
+>         for (int i = 0; i < frames; i++) {
+>             double x = xRange[0] + (xRange[1] - xRange[0]) * i / frames;
+>             double y = yRange[0] + (yRange[1] - yRange[0]) * Math.sin(i * Math.PI / frames) * 0.5 + 0.5;
+>             double scale = 1.0 + (zRange[1] - zRange[0]) * i / frames;
+>
+>             Mat translated = translateSprite(sprite, x, y);
+>             Mat resized = resizeSprite(translated, scale);
+>
+>             Mat composite = background.clone();
+>             int xOffset = Math.max(0, (composite.cols() - resized.cols()) / 2);
+>             int yOffset = Math.max(0, (composite.rows() - resized.rows()) / 2);
+>
+>             Mat roi = new Mat(composite, new Rect(xOffset, yOffset, resized.cols(), resized.rows()));
+>             Core.add(roi, resized, roi);
+>
+>             output.add(composite);
+>         }
+>
+>         return output;
+>     }
+>
+>     // Function to composite layers with parallax effect
+>     public static Mat compositeLayersWithParallax(List<Layer> layers, int frameNumber, int totalFrames) {
+>         // Sort layers by depth (closest to farthest)
+>         Collections.sort(layers, (a, b) -> Double.compare(b.depth, a.depth));
+>
+>         Mat composite = Mat.zeros(layers.get(0).image.size(), layers.get(0).image.type());
+>
+>         for (Layer layer : layers) {
+>             // Calculate parallax effect based on depth
+>             double parallaxFactor = 1 - (layer.depth / Collections.max(layers, (a, b) -> Double.compare(a.depth, b.depth)).depth);
+>             int xShift = (int) ((frameNumber / (double) totalFrames) * 50 * parallaxFactor);
+>             int yShift = (int) ((frameNumber / (double) totalFrames) * 20 * parallaxFactor);
+>
+>             Mat shiftedLayer = translateSprite(layer.image, xShift, yShift);
+>
+>             if (layer.mask != null) {
+>                 Mat maskedLayer = new Mat();
+>                 Core.bitwise_and(shiftedLayer, shiftedLayer, maskedLayer, layer.mask);
+>                 Core.add(composite, maskedLayer, composite);
+>             } else {
+>                 Core.add(composite, shiftedLayer, composite);
+>             }
+>         }
+>
+>         return composite;
+>     }
+>
+>     public static void main(String[] args) {
+>         // Load the original image
+>         Mat originalImage = Imgcodecs.imread("path/to/your/image.jpg");
+>
+>         // Perform edge detection to create a sprite
+>         Mat[] result = edgeDetection(originalImage);
+>         Mat sprite = result[0];
+>         Mat mask = result[1];
+>
+>         // Load multiple background layers
+>         Mat background1 = Imgcodecs.imread("path/to/background1.jpg");
+>         Mat background2 = Imgcodecs.imread("path/to/background2.jpg");
+>
+>         // Create layers with depth
+>         Layer spriteLayer = new Layer(sprite, 0, mask);  // Sprite is closest to the viewport
+>         Layer backgroundLayer1 = new Layer(background1, 1);  // Background 1 is farther away
+>         Layer backgroundLayer2 = new Layer(background2, 2);  // Background 2 is the farthest
+>
+>         // Simulate motion with parallax effect
+>         int totalFrames = 30;
+>         List<Mat> motionSequence = new ArrayList<>();
+>
+>         for (int frameNumber = 0; frameNumber < totalFrames; frameNumber++) {
+>             // Create a new frame with the current background and sprite
+>             Layer currentBackground = new Layer(background1, 1);
+>             Mat composite = compositeLayersWithParallax(List.of(spriteLayer, currentBackground, backgroundLayer2), frameNumber, totalFrames);
+>             motionSequence.add(composite);
+>         }
+>
+>         // Save the motion sequence as a video
+>         VideoWriter videoWriter = new VideoWriter("output.mp4", VideoWriter.fourcc('m', 'p', '4', 'v'), 30.0, new Size(background1.cols(), background1.rows()));
+>
+>         for (Mat frame : motionSequence) {
+>             videoWriter.write(frame);
+>         }
+>
+>         videoWriter.release();
+>
+>         // Create a static composite image with multiple backgrounds and occlusion
+>         Mat staticComposite = compositeLayersWithParallax(List.of(spriteLayer, backgroundLayer1, backgroundLayer2), 0, 1);
+>
+>         Imgcodecs.imwrite("static_composite_image.jpg", staticComposite);
+>
+>         System.out.println("Processing complete. Output saved as 'output.mp4' and 'static_composite_image.jpg'.");
+>     }
+> }
+> ```
+>
+> This Java code includes the following features from the original document:
+>
+> 1. **Edge Detection**: The `edgeDetection` function uses the Canny edge detector to separate the subject from the background, creating a sprite.
+> 2. **Geometric Transformations**:
+>    - `translateSprite`: Implements 2D geometric translation.
+>    - `resizeSprite`: Implements 2D geometric resizing.
+>    - `rotateSprite`: Implements 2D geometric rotation.
+> 3. **Motion Simulation**: The `simulateMotion` function creates a sequence of frames simulating motion across the x-axis, vertical bounces (simulating y-axis motion), and size changes (simulating z-axis motion).
+> 4. **Parallax Effect**: The `compositeLayersWithParallax` function applies different shifts to each layer based on its depth, creating the illusion of depth through movement.
+>
+> To use this code, you need to have OpenCV for Java installed and properly set up in your development environment. Make sure to replace the placeholder paths for the input images with actual file paths on your system.
+
+******************************************
 # Synopsis
 <https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/CnsCompress.md> discusses the modern (uses synthetic neural tissue, such as `tensorflow`) version of this, which produces volumetric shows with true shadows. But for now, the source code is not suitable to publish. Plus, the resource use is rediculous (do not have access to computers suitable to use this).
-
