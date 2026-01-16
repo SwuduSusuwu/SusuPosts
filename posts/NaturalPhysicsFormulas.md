@@ -1,4 +1,4 @@
-**Formulas (plus data structures) for sims to use for natural physics**
+**\[Preview\] Formulas (plus data structures) for sims to use for natural skeleton physics**
 
 \[[This post](./NaturalPhysicsFormulas.md) is [released through *Creative Commons Attributions 2* (which allows all uses)](https://creativecommons.org/licenses/by/2.0/). Version of this post is [SusuPosts@`preview`](https://github.com/SwuduSusuwu/SusuPosts/commit/preview).\]
 
@@ -37,18 +37,16 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 >
 > - **Bone Transformation**:
 >   Each bone’s global transform is computed as:
->   \[
->   T_i = T_{parent(i)} \cdot R_i \cdot T_{local(i)}
->   \]
+>   $$T_i = T_{parent(i)} \cdot R_i \cdot T_{local(i)}$$
 >   Where:
->   - \( T_i \) = global transform of bone \( i \),
->   - \( R_i \) = rotation matrix (from joint angles),
->   - \( T_{local(i)} \) = local translation/scale of the bone.
+>   - $T_i$ = global transform of bone $i$,
+>   - $R_i$ = rotation matrix (from joint angles),
+>   - $T_{local(i)}$ = local translation/scale of the bone.
 >
 > - **Rotation Representations**:
->   - **Euler Angles**: \( \theta_x, \theta_y, \theta_z \)
->   - **Quaternions**: \( q = w + xi + yj + zk \) (preferable for avoiding gimbal lock).
->   - **Axis-Angle**: \( \mathbf{v} \cdot \theta \)
+>   - **Euler Angles**: $\theta_x, \theta_y, \theta_z$
+>   - **Quaternions**: $q = w + xi + yj + zk$ (preferable for avoiding gimbal lock).
+>   - **Axis-Angle**: $\mathbf{v} \cdot \theta$
 >
 > ---
 >
@@ -57,29 +55,21 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 >
 > ##### **Analytical IK (for simple chains, e.g., 2D/3D arm)**
 > - **2D Example (Revolute Joints)**:
->   \[
->   \theta_1 = \text{atan2}(y_{target}, x_{target}) - \text{atan2}(L_2 \sin(\theta_2), L_1 + L_2 \cos(\theta_2))
->   \]
->   \[
->   \theta_2 = \pi - \text{acos}\left(\frac{L_1^2 + L_2^2 - d^2}{2 L_1 L_2}\right)
->   \]
->   Where \( d \) = distance to target.
+>   $$\theta_1 = \text{atan2}(y_{target}, x_{target}) - \text{atan2}(L_2 \sin(\theta_2), L_1 + L_2 \cos(\theta_2))$$
+>   $$\theta_2 = \pi - \text{acos}\left(\frac{L_1^2 + L_2^2 - d^2}{2 L_1 L_2}\right)$$
+>   Where $d$ = distance to target.
 >
 > - **3D CCD (Cyclic Coordinate Descent)**:
 >   An iterative method that aligns each joint toward the target in sequence:
->   \[
->   \Delta \theta_i = \text{arctan2}(\|\mathbf{v}_i \times \mathbf{d}_i\|, \mathbf{v}_i \cdot \mathbf{d}_i)
->   \]
->   Where \( \mathbf{v}_i \) = bone direction, \( \mathbf{d}_i \) = vector to target.
+>   $$\Delta \theta_i = \text{arctan2}(\|\mathbf{v}_i \times \mathbf{d}_i\|, \mathbf{v}_i \cdot \mathbf{d}_i)$$
+>   Where $\mathbf{v}_i \) = bone direction, \( \mathbf{d}_i$ = vector to target.
 >
 > ##### **Jacobian-Based IK (for complex chains)**:
-> \[
-> \dot{\theta} = J^\dagger \cdot \mathbf{v}_{error}
-> \]
+> $$\dot{\theta} = J^\dagger \cdot \mathbf{v}_{error}$$
 > Where:
-> - \( J \) = Jacobian matrix (relates joint velocities to end-effector velocity),
-> - \( J^\dagger \) = pseudoinverse of \( J \),
-> - \( \mathbf{v}_{error} \) = velocity needed to reach the target.
+> - $J$ = Jacobian matrix (relates joint velocities to end-effector velocity),
+> - $J^\dagger$ = pseudoinverse of $J$,
+> - $\mathbf{v}_{error}$ = velocity needed to reach the target.
 >
 > ---
 >
@@ -87,27 +77,19 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 > ##### **Self-Collision Avoidance**:
 > - **Bounding Volumes**:
 >   - **AABB (Axis-Aligned Bounding Box)**:
->     \[
->     \text{Overlap} = \left(\max(x_{min1}, x_{min2}) \leq \min(x_{max1}, x_{max2})\right) \land \dots
->     \]
+>     $$\text{Overlap} = \left(\max(x_{min1}, x_{min2}) \leq \min(x_{max1}, x_{max2})\right) \land \dots$$
 >   - **Sphere-Sphere**:
->     \[
->     \text{Distance} \leq r_1 + r_2
->     \]
+>     $$\text{Distance} \leq r_1 + r_2$$
 >   - **Capsule-Capsule** (common for limbs):
->     \[
->     \text{Distance between line segments} \leq r_1 + r_2
->     \]
+>     $$\text{Distance between line segments} \leq r_1 + r_2$$
 >
 > - **Penetration Resolution**:
 >   If collision occurs, apply repulsive forces:
->   \[
->   \mathbf{F}_{rep} = k_p \cdot \mathbf{n} \cdot \delta + k_d \cdot \mathbf{v}_{rel} \cdot \mathbf{n}
->   \]
+>   $$\mathbf{F}_{rep} = k_p \cdot \mathbf{n} \cdot \delta + k_d \cdot \mathbf{v}_{rel} \cdot \mathbf{n}$$
 >   Where:
->   - \( \delta \) = penetration depth,
->   - \( \mathbf{n} \) = normal at contact point,
->   - \( k_p, k_d \) = proportional/derivative gains.
+>   - $\delta$ = penetration depth,
+>   - $\mathbf{n}$ = normal at contact point,
+>   - $k_p, k_d$ = proportional/derivative gains.
 >
 > ##### **Environment Collision**:
 > - **Raycasting/Proximity Queries**:
@@ -117,10 +99,8 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 >
 > #### **4. Joint Limits & Dynamics**
 > - **Joint Torque Constraints**:
->   \[
->   \tau = k_p (\theta_{desired} - \theta_{current}) - k_d \omega_{current}
->   \]
->   Where \( \tau \) = applied torque, \( \omega \) = angular velocity.
+>   $$\tau = k_p (\theta_{desired} - \theta_{current}) - k_d \omega_{current}$$
+>   Where $\tau \) = applied torque, \( \omega$ = angular velocity.
 >
 > - **Collision-Driven Joint Adjustments**:
 >   If a limb intersects another, adjust joint angles
@@ -130,14 +110,14 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 ## Question for popular sims
 **Notice**: *World of Warcraft* includes [violent content which can "reprogram" your mirror neurons to make you violent](https://pmc.ncbi.nlm.nih.gov/articles/PMC12741966/). One solution is to limit use to fantastical "no-contact caster" classes (such as "Balance druids") or to [support roles](https://github.com/SwuduSusuwu/SusuJava/blob/preview/posts/MultiuserConcernsPlusGoals.md#discussion).
 * *World of Warcraft* is just used an example of a renderer engine which includes [skeletons + structures](./Physics_sims_which_structures_to_use.md#popular-structures-for-sims) whose interactions would improve from more [natural physics formulas](#solar-pro-2s-solution-for-physics-formulas). Most of the content is extremely negative: do not install.
-* The sole value of *World of Warcraft* was that old versions included an ["addon" system](https://wowpedia.fandom.com/wiki/Lua_functions) which encouraged users to learn how to *[Lua](https://www.lua.org/)* to script the avatars motions (similar to *[Blender](https://www.blender.org/support/tutorials/)* or *[Miku Miku Dance](https://learnmmd.com/downloads/)*, plus with shared worlds to interact with (which *Blender*/*Miku Miku Dance* do not include)), but new versions have "[tainted](https://wowpedia.fandom.com/wiki/Secure_Execution_and_Tainting)" the addon system so that such artificial consciousness is no longer possible. Alternatives (which do not have violence, but which can process artificial consciousness):
+* The sole value of *World of Warcraft* was that old versions included an ["addon" system](https://wowpedia.fandom.com/wiki/Lua_functions) which encouraged users to learn how to use [*Lua*](https://www.lua.org/) to script the avatars motions (similar to [*Blender*](https://www.blender.org/support/tutorials/) or [*Miku Miku Dance*](https://learnmmd.com/downloads/), plus with shared worlds to interact with (which *Blender*/*Miku Miku Dance* do not include)), but new versions have "[tainted](https://wowpedia.fandom.com/wiki/Secure_Execution_and_Tainting)" the addon system so that such artificial consciousness is no longer possible. Alternatives (which do not have violence, but which can process artificial consciousness):
   * [*Whoa* is a fan-produced version of the WoW executable which does not use Blizzard's code](https://github.com/whoahq/whoa). Since *Whoa* is opensource, *Whoa* can use *Lua* scripts to script movements/dances. *Whoa* does not support *Blizzard*'s servers, just fan-servers (such as *AzerothCore*).
   * [*Roblox* has "*Luau"*](https://create.roblox.com/docs/luau) which can do what the original *WoW* could do with *Lua*, plus more.
   * [*VRChat* has "*Udon"*](https://creators.vrchat.com/worlds/udon/) which can do what the original *WoW* could do with *Lua*, plus more.
   * [*ChilloutVR* has "*Moonsharp"*](https://docs.chilloutvr.net/cck/lua/) which can do what the original *WoW* could do with *Lua*, plus more. [*Moonsharp* is one of numerous derivatives of *Lua*](https://moonsharp.org/).
   * [*Convai Sim*'s description is "Simulation platform for AI-Powered Virtual Humans"](https://forum.convai.com/t/introducing-convai-sim-a-simulation-platform-for-ai-powered-virtual-humans/4644): "Convai’s no-code simulation platform — a powerful suite of tools to create, animate, and deploy AI-powered virtual humans and 3D simulations right in the browser."
   * [*AI2-THOR*'s description is "An Interactive 3D Environment for Visual AI"](https://arxiv.org/abs/1712.05474): "We introduce The House Of inteRactions (THOR), a framework for visual AI research, available at this http URL. AI2-THOR consists of near photo-realistic 3D indoor scenes, where AI agents can navigate in the scenes and interact with objects to perform tasks. AI2-THOR enables research in many different domains including but not limited to deep reinforcement learning, imitation learning, learning by interaction, planning, visual question answering, unsupervised representation learning, object detection and segmentation, and learning models of cognition."
-  * [*Second Life* has "*Linden Script Language"*](https://wiki.secondlife.com/wiki/Getting_started_with_LSL) which can do what the original *WoW* could do with *Lua*, plus more, plus [*Firestorm Viewer*](https://www.firestormviewer.org)
+  * [*Second Life* has "*Linden Script Language"*](https://wiki.secondlife.com/wiki/Getting_started_with_LSL) which can do what the original *WoW* could do with *Lua*, plus more. Uses [*Firestorm Viewer*](https://www.firestormviewer.org), which can import assets from *Blender*.
     * [*OpenSimulator* (the opensource version of *Second Life*) also uses "*Linden Script Language"*](https://opensimulator.dev/wiki/Scripting_Documentation), which has you host your own "grid" of map servers.
     * [*Alife Virtual* is a hosted grid (instance) of *OpenSimulator*, which also uses "*Linden Script Language"*](https://www.alifevirtual.com/blog/opensim-lsl-compatibility.php). Advantages: [hosts an *OpenSim* grid for you, with no cost for most tools](https://www.alifevirtual.com/second-life-vs-alife-2025.php).
   * [*Meta Horizon Worlds* has "*TypeScript"*](https://developers.meta.com/horizon-worlds/learn/documentation/typescript/typescript) which can do what the original *WoW* could do with *Lua*, plus more.
