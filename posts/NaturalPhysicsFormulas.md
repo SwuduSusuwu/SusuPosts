@@ -12,6 +12,7 @@
   - [Question for popular sims part 2](#question-for-popular-sims-part-2)
     - [*Solar-Pro-2*'s solution for popular sims part 2](#solar-pro-2s-solution-for-popular-sims-part-2)
 - [Synopsis](#synopsis)
+  - [*World of Warcraft* userbots](#world-of-warcraft-userbots)
 
 ******************************************
 
@@ -111,7 +112,7 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 **Notice**: *World of Warcraft* includes [violent content which can "reprogram" your mirror neurons to make you violent](https://pmc.ncbi.nlm.nih.gov/articles/PMC12741966/). One solution is to limit use to fantastical "no-contact caster" classes (such as "Balance druids") or to [support roles](https://github.com/SwuduSusuwu/SusuJava/blob/preview/posts/MultiuserConcernsPlusGoals.md#discussion).
 * *World of Warcraft* is just used an example of a renderer engine which includes [skeletons + structures](./Physics_sims_which_structures_to_use.md#popular-structures-for-sims) whose interactions would improve from more [natural physics formulas](#solar-pro-2s-solution-for-physics-formulas). Most of the content is extremely negative: do not install.
 * The sole value of *World of Warcraft* was that old versions included an ["addon" system](https://wowpedia.fandom.com/wiki/Lua_functions) which encouraged users to learn how to use [*Lua*](https://www.lua.org/) to script the avatars motions (similar to [*Blender*](https://www.blender.org/support/tutorials/) or [*Miku Miku Dance*](https://learnmmd.com/downloads/), plus with shared worlds to interact with (which *Blender*/*Miku Miku Dance* do not include)), but new versions have "[tainted](https://wowpedia.fandom.com/wiki/Secure_Execution_and_Tainting)" the addon system so that such artificial consciousness is no longer possible. Alternatives (which do not have violence, but which can process artificial consciousness):
-  * [*Whoa* is a fan-produced version of the WoW executable which does not use Blizzard's code](https://github.com/whoahq/whoa). Since *Whoa* is opensource, *Whoa* can use *Lua* scripts to script movements/dances. *Whoa* does not support *Blizzard*'s servers, just fan-servers (such as *AzerothCore*).
+  * [*Whoa* is a fan-produced version of the WoW executable which does not use Blizzard's code](https://github.com/whoahq/whoa). Since *Whoa* is opensource, *Whoa* can use *Lua* scripts to script movements/dances. *Whoa* does not support *Blizzard*'s servers, just fan-servers (such as *AzerothCore*). Solutions continued: [*World of Warcraft* userbots](#world-of-warcraft-userbots).
   * [*Roblox* has "*Luau"*](https://create.roblox.com/docs/luau) which can do what the original *WoW* could do with *Lua*, plus more.
   * [*VRChat* has "*Udon"*](https://creators.vrchat.com/worlds/udon/) which can do what the original *WoW* could do with *Lua*, plus more.
   * [*ChilloutVR* has "*Moonsharp"*](https://docs.chilloutvr.net/cck/lua/) which can do what the original *WoW* could do with *Lua*, plus more. [*Moonsharp* is one of numerous derivatives of *Lua*](https://moonsharp.org/).
@@ -123,7 +124,7 @@ Notice: the *block quote* which follows was produced from the *artificial intell
   * [*Meta Horizon Worlds* has "*TypeScript"*](https://developers.meta.com/horizon-worlds/learn/documentation/typescript/typescript) which can do what the original *WoW* could do with *Lua*, plus more.
   * [*Resonite* has "*ProtoFlux*](https://wiki.resonite.com/ProtoFlux) which can do **most of** what the original *WoW* could do with *Lua*, plus more. Is a **visual programming language** (**node-based**, not **functional**), so can not do all which *Lua* can do, but has more access than the (much restricted) access which *WoW* gives to *Lua*.
   * [This discussion with *Solar-Pro-2* references numerous altneratives](https://poe.com/s/aAjxpcHxJJrLO1oUsHb1).
-> Wish to know the reason that new versions of sims such as World of Warcraft still have problems such as: complex skeletons (such as Dracthyr or dragon mounts) have numerous intersections with the environment (unless all alone). Is as if the "physics" is limited to simple lists of limb positions which ignore other skeletons. How long until such sims have more natural physics (such as if you crash your Gryphon into a house, the Gryphon does not "no-clip" half of its skeleton through the wall, but instead lands on the wall of the house (or bounces off)? In close coridoors, extended skeletons always "no-clip" through the walls, regardless of how you move. How long until most sims will have thus will "smush flat" against the walls, or "fold down" towards your center mass?
+> Wish to know the reason that new versions of sims such as *World of Warcraft* still have problems such as: complex skeletons (such as Dracthyr or dragon mounts) have numerous intersections with the environment (unless all alone). Is as if the "physics" is limited to simple lists of limb positions which ignore other skeletons. How long until such sims have more natural physics (such as if you crash your Gryphon into a house, the Gryphon does not "no-clip" half of its skeleton through the wall, but instead lands on the wall of the house (or bounces off)? In close coridoors, extended skeletons always "no-clip" through the walls, regardless of how you move. How long until most sims will have thus will "smush flat" against the walls, or "fold down" towards your center mass?
 
 ### *Solar-Pro-2*'s solution for popular sims
 Notice: the *block quote* which follows was produced from the *artificial intelligence* known as [*Solar-Pro-2*](https://poe.com/Solar-Pro-2).
@@ -286,4 +287,41 @@ Notice: the *block quote* which follows was produced from the *artificial intell
 
 # Synopsis
 * [`./posts/Physics_sims_which_structures_to_use.md`](./Physics_sims_which_structures_to_use.md)
+
+## *World of Warcraft* userbots
+Followup question:
+
+> Wish to host a server which allows userbots, then encourage users to use this custom `WoW.exe` executable for *Code Golf*. This would not include such heuristics (such as the best formulas to move around crowded zones or to combat bosses), just the functions required for users to learn how to produce such, to encourage users to learn *Lua*. Perhaps the most simple formulas would get included as defaults (such as movement in straight path to target position, or use of the best 2 to 4 skills against monsters, similar to the official `WoW.exe`'s "single button" mode) as examples of what you are supposed to do, but those would not be competitive, since the purpose is to encourage users to learn *Lua*. Another purpose of this is for personal use, to research synthetic consciousness.
+
+******
+
+Solution from *Google Assistant* (**notice**: *Google Assistant* is an artificial intelligence):
+> To achieve a "Code Golf" environment where users script avatars with unlocked Lua functions on an [AzerothCore](https://www.azerothcore.org/eluna/) server, you have two primary paths: modifying the official client or using a specialized server-side module.
+>
+> 1. The "Lua Unlocker" Path (Client-Side)
+>
+> If you want users to use a version of the official `WoW.exe` for their scripts, you must provide a **Lua Unlocker**. By default, Blizzard "protects" functions like `CastSpellByName` or `JumpOrAscendStart` to prevent automation.
+>
+> * **How it works:** These tools patch the game's memory to allow "insecure" code (standard AddOns) to call "protected" functions.
+> * **Existing Tools:**
+>    * [**Zebra**](https://github.com/CreativeMind1001/zebra)**:** A specialized unlocker for private servers (Vanilla through WoD) that turns conditional jumps into simple jumps to bypass protection.
+>    * [**Fail46 Lua Unlocker**](https://github.com/fail46/World-of-Warcraft-Lua-Unlocker)**:** A DLL-based injector that uses pattern scanning to patch any version of WoW after 4.0.6a.
+> * **Suitability for Code Golf:** This is the most "authentic" method. Users write standard AddOns in the `Interface/AddOns` folder, and with the unlocker active, their scripts can move their character and cast spells just like a developer would on an internal build. 
+>
+> 2. The "Playerbot-Lua" Path (Headless/Server-Side)
+>
+> For a purely educational "Code Golf" experience without the overhead of a graphical client, you can use [**playerbot-lua**](https://github.com/nate123456/playerbot-lua).
+>
+> * **The Tool:** It is a dedicated Lua scripting API for AzerothCore that allows developers to automate [Playerbots](https://github.com/mod-playerbots/mod-playerbots) at runtime.
+> * **Workflow:** Instead of a `WoW.exe`, users use a CLI tool to "deploy" their Lua scripts to the server. They then use in-game commands like `.bot ai load` to execute their logic.
+> * **Educational Value:** It uses an isolated Lua environment, making it perfect for teaching heuristics without risking server stability. 
+>
+> 3. Creating Your Own (The "Grok-2" Approach)
+>
+> If you choose to generate a custom headless client with an AI like Grok-2, you should focus the prompt on integrating the [**Eluna Lua Engine**](https://github.com/ElunaLuaEngine/Eluna) with a networking library.
+>
+> * **Structure:** Ask the AI to bridge the [wow-client (Typescript/C++)](https://github.com/timelostprototype/wow-client) networking stack with the Eluna API.
+> * **Goal:** The client should receive world data (nearby\_monsters, chat), populate local tables, and expose them to a Lua state that runs files from a local directory. 
+>
+> **Recommendation:** For your specific goal of encouraging children/users to learn Lua via "Code Golf," **playerbot-lua** combined with an AzerothCore server is the most mature and "ready-to-host" solution available today.
 
