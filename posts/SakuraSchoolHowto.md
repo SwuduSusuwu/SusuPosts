@@ -29,6 +29,7 @@ This post continues into numerous more visual posts:
 
 New (todo: publish to _SubStack_ + _YouTube_) prop import codes:
 - #"`7117_5393_3569_25`" (*Island Backdrops 0.4.6.22*)
+- #"`7917_5946_3840_25`" (*Island Backdrops 0.4.6.24*) *notice*: not asymptotic improve (unlike most new versions), but has "tradeoffs". Will consider to drop this version.
 - #"`3117_5261_9810_25`" (*Wood Shop Class 0.2.2.4.4*)
 - #"`2317_6982_8591_30`" (*Hous + Shop Class + autonomous*)
 - #"`7217_6982_8705_24`" (*Autonomous Robos 0.2.2.2*)
