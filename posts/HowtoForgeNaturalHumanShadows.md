@@ -119,6 +119,10 @@ Solution: formulas which start with "hardcoded values" (`const` / `static` coeff
 
 ******************************************
 
+[`./posts/NaturalPhysicsFormulas.md`](./NaturalPhysicsFormulas.md) lists numerous skeleton physics formulas, plus discusses how to use thus for sims. Whether the meshes+skeletons are extracted from natural images or are traditional (custom-built for sims), similar physics formulas are used.
+
+******************************************
+
 [This discussion with *Solar-Pro-2*](https://poe.com/s/khKTXjwRg7tOqcb4GuVd) lists numerous tools which consumers can now use to forge human semblances with natural shadows:
 
 ## **Q**:
