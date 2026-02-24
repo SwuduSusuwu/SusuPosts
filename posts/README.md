@@ -31,6 +31,7 @@
 - [`./posts/Physics_sims_which_structures_to_use.md`](./Physics_sims_which_structures_to_use.md)
 - [`./posts/Tensorflow_produces_meshes.md`](./Tensorflow_produces_meshes.md)
 - [`./posts/NaturalPhysicsFormulas.md`](./NaturalPhysicsFormulas.md) lists numerous skeleton physics formulas, plus discusses how to use thus for sims.
+- [`./posts/Howto_utopian_communism.md` ](./Howto_utopia_communism.md) is "**How to replace world governments with trust for humans to contribute, plus the autonomous tools which can mass-produce food+houses so that less trust is required in fellow humans: utopian communism**".
 - [`./posts/ConsumerWarnings/`](./ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
