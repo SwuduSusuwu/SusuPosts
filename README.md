@@ -38,8 +38,8 @@ Download with `git clone https://github.com/SwuduSusuwu/SusuPosts.git` and brows
 - To opt-in to the beta (the preview), use `git switch preview` (opt-out with `get switch trunk`).
 ## Signatures / certificates
 [`./.ssh/setup.sh`](./setup.sh) is to setup `gpg.ssh.allowedSignersFile` (allows to use `git verify <ref>` or `git log --show-signature`).
-- `git verify <ref>` or `git log --show-signature` shall match [`./.ssh/sha256.sig`](./.ssh/sha256.sig) for [new commits](https://github.com/SwuduSusuwu/SusuLib/commit/3efe601f15ae0fdfd05cfbc1a75a0e6a4a08124b)
-- You can compare those certificates to [our blog post](https://swudususuwu.substack.com/p/githubcomswudususuwusubstack-certificate-new).)
+- `git verify <ref>` or `git log --show-signature` shall match [`./.ssh/sha256.sig`](./.ssh/sha256.sig) for [new commits](https://github.com/SwuduSusuwu/SusuPosts/commit/421c7a95665dec784cb1733d900c9e227d92ad8f)
+- You can compare those certificates to [this post](https://swudususuwu.substack.com/p/s256_kz1xw3wo0bpceuvl3qh4nulf0hnll4nnkehiko6zk0).)
 
 \[Notice: This [public crypto](https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html#verify-commits-locally) "signature", is not related to "signature analysis" ([Substr scans](https://github.com/SwuduSusuwu/blob/preview/SusuLib/README.md#purposes)).\]
 
