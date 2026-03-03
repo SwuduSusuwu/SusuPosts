@@ -9,6 +9,8 @@ Asof [2025-07-26](https://github.com/SwuduSusuwu/SusuLib/discussions/70) ([commi
 
 [Asof 2025-10-25](https://github.com/SwuduSusuwu/SusuLib/discussions/70#discussioncomment-14782700) ([`commit` bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8](https://github.com/SwuduSusuwu/SusuPosts/commit/bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8)), <https://github.com/SwuduSusuwu/> switches to a new certificate[^6]. The previous certificates are not known as "compromised", but were used on numerous devices (thus are no longer trustable).
 
+[Asof 2025-11-30](https://github.com/SwuduSusuwu/SusuLib/discussions/70#discussioncomment-15120423) (this `commit`), <https://github.com/SwuduSusuwu/> switches to a new certificate[^7]. The previous certificates are not known as "compromised", but were used on numerous devices (thus are no longer trustable).
+
 ## Supported versions
 Users can expect that past 2024-06-26, [`trunk`](https://github.com/SwuduSusuwu/SusuPosts/tree/trunk/) passes [_GitHub_'s code reviews](https://github.blog/changelog/2025-04-22-github-actions-workflow-security-analysis-with-codeql-is-now-generally-available/)[^2].
 - If _GitHub_ gives advisories, <https://github.com/SwuduSusuwu/SusuPosts/security/> shows those (the top just shows what is in `SECURITY.md`, so remember to scroll down).
@@ -39,4 +41,6 @@ You can expect:
 
 [^5]: Asof [commit f766b5c0fa2a87b3f34d3a5ba7dd9092f1dae278](https://github.com/SwuduSusuwu/SusuPosts/commit/f766b5c0fa2a87b3f34d3a5ba7dd9092f1dae278), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (and the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) have a new certificate. All commits which follow that commit must use that new certificate (`SHA256:G6I98GU7oMXNmKB/k10nAlZo52bN9y17xvARXjblM2g`).
 
-[^6]: Asof [`commit` bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8](https://github.com/SwuduSusuwu/SusuLib/commit/bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (plus the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) use new sigs. All `commit`s which follow that `commit` must use those new sigs (hash is `SHA256:1ywl0RIdF6ZueX1qazgx1ihGDytfKYf9T97gONFroio`).
+[^6]: Asof [`commit` bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8](https://github.com/SwuduSusuwu/SusuPosts/commit/bad62086bd3b7f1a9b773d2e0b2ae187f6f9cae8), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (plus the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) use new sigs. All `commit`s which follow that `commit` must use those new sigs (hash is `SHA256:1ywl0RIdF6ZueX1qazgx1ihGDytfKYf9T97gONFroio`).
+
+[^7]: [Asof 2025-11-30](https://github.com/SwuduSusuwu/SusuLib/discussions/70#discussioncomment-15120423) (this `git commit`), [`./.ssh/sha256.sig`](./.ssh/sha256.sig) (plus the [`./.ssh/allowed_signers`](./.ssh/allowed_signers) which `sha256.sig` produces) use new sigs. All `commit`s which follow that `commit` must use those new sigs (hash is `SHA256:KZ1xw3wO0BPce/uVl3qH4nULF0hnLL4NNKEhiko6ZK0`).
