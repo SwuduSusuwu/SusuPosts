@@ -1,17 +1,18 @@
-**[Most technology was always negative (deserves discarded)](https://www.technologyreview.com/2024/05/15/1092350/technology-is-probably-changing-us-for-the-worse-or-so-we-always-think/): humans should go back to farms.**
+**[Most technology is negative (deserves discarded)](https://www.technologyreview.com/2024/05/15/1092350/technology-is-probably-changing-us-for-the-worse-or-so-we-always-think/): humans should [go back to farms](https://www.youtube.com/results?search_query=modern+communes).**
 
 # Table of Contents
 - [Problems](#problems)
 - [Solutions](#solutions)
 - [Synopsis + resources](#synopsis--resources)
 
-******************************************
-# Problems
-![Technology at its best](https://substack-post-media.s3.amazonaws.com/public/images/4454ead0-e906-4cea-a563-92ef5e7355c1_2099x1080.png)
+![Technology at its best](https://substack-post-media.s3.amazonaws.com/public/images/c2fbeb26-2eba-49af-be2c-74e0fbe6b5fa_1934x1080.png)
 
+******************************************
+
+# Problems
 Wasted my whole life trying to [improve computers](https://github.com/SwuduSusuwu/SusuLib/blob/preview/posts/SimdGpgpuTpu.md) / [autonomous-tools](./Autonomous-tools_%2B_human-consciousness.md), but still none of them have value.
 
-[All which humans ever “invented” was negative plus has no use](https://www.technologyreview.com/2024/05/15/1092350/technology-is-probably-changing-us-for-the-worse-or-so-we-always-think/). Humans are worse off than wild animals.
+[All which humans ever “invented” (except stone farm tools) was negative plus has no use](https://www.technologyreview.com/2024/05/15/1092350/technology-is-probably-changing-us-for-the-worse-or-so-we-always-think/). Humans are worse off than wild animals.
 
 My worst regret is that I learned *English*; the *English* language is the most evil brainwashing device ever invented, with an infinite negative value plus no possible use.
 - All media (books, radio, television or webpages) published in *English* (or [in *Japanese*](https://swudususuwu.substack.com/p/all-japanese-are-nazis-all-they-do)) has an infinite negative value (no purpose except brainwashing), except for that which have published on own.
