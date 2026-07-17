@@ -27,6 +27,8 @@ This post continues into numerous more visual posts:
 New (todo: publish to _SubStack_ + _YouTube_) prop import codes:
 - #"`7117_5393_3569_25`" (*Island Backdrops 0.4.6.22*)
 - #"`3117_5261_9810_25`" (*Wood Shop Class 0.2.2.4.4*)
+- **Sakura School - Wood Shop Class 0.2.4, [z-conflict](https://thecraftsandkitchen.com/how-to-fix-z-fighting-blender/) resolution**
+    Import new props: "`21178430147521`" (_Wood Shop Class 0.2.4_)
 
 **Specifics of the tools which those props represent**: the scaffolds use simple linacs, the arms use 2-axis spherical joints socketed into “booms” (cylindrical tubes) with unshown mechanisms to move:
 - Recessed orthogonal rubber "rollers" (toothless friction-gears with smooth surfaces) in the tubes can (with torque transferred through friction onto the joints) do those 2-axis motions. Stepper motors (or servos) can cause 1 (or both) rollers to move. If the load requires huge torque, improve the friction-coefficient with: smooth surfaces, plus [_continuous variable transmission_ fluid](https://evolvingsphere.com/understanding-cvt-transmission-fluid-what-you-need-to-know/) (such as [_SantoTrac_](https://santolubes.com/products/santotrac/)).
