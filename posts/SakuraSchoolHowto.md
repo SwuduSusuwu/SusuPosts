@@ -33,6 +33,8 @@ New (todo: publish to _SubStack_ + _YouTube_) prop import codes:
 - #"`3117_5261_9810_25`" (*Wood Shop Class 0.2.2.4.4*)
 - #"`2317_6982_8591_30`" (*Hous + Shop Class + autonomous*)
 - #"`7217_6982_8705_24`" (*Autonomous Robos 0.2.2.2*)
+- **Sakura School - Wood Shop Class 0.2.4, [depth-conflict resolution](https://thecraftsandkitchen.com/how-to-fix-z-fighting-blender/)**
+    Import new props: "`21178430147521`" (_Wood Shop Class 0.2.4_)
 
 ******************************************
 
