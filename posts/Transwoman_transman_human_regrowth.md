@@ -40,3 +40,7 @@ New uses, now that the cost of personal [**CRISPR-Cas*** toolkits](https://duckd
 Since numerous tools allow to reprogram genetic code of humans, future posts will consider how to use such tools to improve (not transform) humans:
 - Can humans use some of the genetic code which grants [_Deinococcus radiodurans_](https://wikipedia.org/wiki/Deinococcus_radiodurans) so much radiation resistance? Guess is that some of _Deinodoccus radiodurans_' resistance is structural (simple, reduced code, with multiple redundant clones to restore damaged code), but that some is logical (specific sequences of genetic code which improve resistance). Does some of this logical code have use to humans?
 - Antlers are similar to tumors; with regards to cancer, animals with natural antler growth are almost immune. Guess is that some this resistance is structural, but that some is logical. Does some of this logical code have use to humans?
+
+## 2026 July news
+From *Amazon.com*'s *Alexa* assistant:
+- ![CRISPR-Cas system](https://substackcdn.com/image/fetch/$s_!y3qZ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac3f1996-053c-4241-bc3f-5a01bd9c22a0_1080x2191.png)
