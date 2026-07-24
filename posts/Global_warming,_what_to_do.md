@@ -69,3 +69,4 @@ Solutions which allow to continue gas use:
 - Although not as much less as servos do, fluid pistons improve gas use.
 - [**Old motor designs prevent motorcycles that are low cost, noiseless, small plus fast. Do fluid pistons (such as Ericcson's) allow motorcycles which are low-cost, noiseless, small plus fast?**](./Fluid_pistons_reduce_sound.md) is applicable to cars/vans, too.
 - [Tools which produce ethanol (through photosynthesis, from CO2) are carbon neutral. Cost is around $10000 for tools which produce 5000 gallons (before such tools are recycled/disposed), so $2/gallon. Some cars/vans can use pure ethanol.](https://poe.com/s/7riDu7CJtbXnk30YSpsO) Carbon neutral gas does not cause global warming problems, but traffic is still a problem.
+- [./posts/gas_prices_solutions.md](./gas_prices_solutions.md) discusses numerous solutions, such as switch to cargo bicycles, mopeds or scooters.

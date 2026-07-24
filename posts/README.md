@@ -34,6 +34,8 @@
 - [`./posts/Howto_utopian_communism.md` ](./Howto_utopia_communism.md) is "**How to replace world governments with trust for humans to contribute, plus the autonomous tools which can mass-produce food+houses so that less trust is required in fellow humans: utopian communism**".
 - [`./posts/AutonomousLogHouseConstructionSystem.md`](./AutonomousLogHouseConstructionSystem.md)
 - [`./posts/smart_grass_article.md`](./smart_grass_article.md) says how to produce grass which grows to 2 inches. **Notice**: [was produced through *Google AI Mode*](https://share.google/aimode/AQrR4bguWPkS27bqB), so [careful how you use this](./ConsumerWarnings/Warning_AI_is_not_good_for_humans_to_use.md).
+- [`./posts/posts/gas_prices_solutions.md`](./gas_prices_solutions.md) is **for gas prices to reduce, one solution is to just commute to your job & to stores. if all did this, traffic (plus gas prices) would reduce. solution 2: you can purchase 100L backpacks for $20, plus cargo bicycles or scooters for around $200, suitable to go to the store with no gas**
+
 - [`./posts/ConsumerWarnings/`](./ConsumerWarnings/) is for negative ("wish had known this sooner": what not to do, where not to go, what not to purchase) posts.
 - <https://github.com/SwuduSusuwu/SusuPosts.git> is a work-in-progress which is supposed to mirror all posts, which starts with the oldest posts (so for now this does not include new posts, which <https://github.com/SwuduSusuwu/SusuLib/tree/preview/posts/> does).
 
